@@ -13,7 +13,24 @@ another thing that not exist in Angular 2: `$watch`.
 I start defining the problem. We can have a directive or Angular 1 component
 like that:
 
-`gist:https://gist.github.com/magarcia/384af019aef2ef465f3e08c5b8f905ec.js?file=example.directive.js`
+```js
+var module = angular.module("myApp");
+
+module.directive('exampleDirective', function () {
+  return {
+    template: '<div>{{internalVar}}</div>',
+    scope: {
+      externalVar: "="
+    },
+    controller: function(scope, element) {
+      scope.$watch('externalVar', function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          scope.internalVar = newVal;
+        }
+      });
+    }
+});
+```
 
 If we want to migrate this code to Angular 2 we find a trouble: the new Angular
 don't have `scope`, so it don't have `$watch`. How we can watch a directive
@@ -27,4 +44,20 @@ _From [MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Funct
 So we can bind the input for a component to a function that do the same as the
 `$watch` function.
 
-`gist:https://gist.github.com/magarcia/384af019aef2ef465f3e08c5b8f905ec.js?file=example.component.ts`
+```ts
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'example-component'
+})
+export class ExampleComponent {
+  public internalVal = null;
+
+  constructor() {}
+
+  @Input('externalVal')
+  set updateInternalVal(externalVal) {
+    this.internalVal = externalVal;
+  }
+}
+```

@@ -3,13 +3,24 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import matter from 'gray-matter';
 import getReadingTime from 'reading-time';
+import moment from 'moment';
 import remark from 'remark';
-import remarkReact from 'remark-react';
+import reactRender from 'remark-react';
+import lowlight from 'remark-react-lowlight';
+import githubSchema from 'hast-util-sanitize/lib/github.json';
+import ts from 'highlight.js/lib/languages/typescript';
+import js from 'highlight.js/lib/languages/javascript';
 import MetaInfo from '../components/MetaInfo';
 import Content from '../components/Content';
-import { gistPlugin, remarkReactConfig } from '../lib';
 import SocialShare from '../components/SocialShare';
 import css from './post.module.css';
+import './highlightjs.css';
+
+const schema = Object.assign({}, githubSchema, {
+  attributes: Object.assign({}, githubSchema.attributes, {
+    code: [...(githubSchema.attributes.code || []), 'className']
+  })
+});
 
 class Post extends Component {
   static propTypes = {
@@ -24,16 +35,17 @@ class Post extends Component {
 
   static async getInitialProps(context) {
     const { id, year, month, day } = context.query;
-    const post = await import(`../_posts/${year}-${month}-${day}-${id}.md`);
+    const date = moment(new Date(year, month - 1, day)).format('YYYY-MM-DD');
+    const post = await import(`../_posts/${date}-${id}.md`);
     const document = matter(post.default);
 
     return {
       slug: id,
-      year,
-      month,
-      day,
+      year: parseInt(year, 10),
+      month: parseInt(month, 10),
+      day: parseInt(day, 10),
       content: document.content,
-      readingTime: getReadingTime(document.content),
+      readingTime: getReadingTime(document.content).text,
       title: document.data.title
     };
   }
@@ -49,8 +61,30 @@ class Post extends Component {
           <Content>
             {
               remark()
-                .use(gistPlugin)
-                .use(remarkReact, remarkReactConfig)
+                .use(reactRender, {
+                  sanitize: schema,
+                  remarkReactComponents: {
+                    code: lowlight({
+                      ts,
+                      js
+                    }),
+                    p: ({ children }) => {
+                      if (children[0] === '!(') {
+                        return (
+                          <iframe
+                            src={children[1].props.href}
+                            title={children[1].props.href}
+                            frameBorder="0"
+                            width="700"
+                            height="394"
+                            allowFullScreen
+                          />
+                        );
+                      }
+                      return <p>{children}</p>;
+                    }
+                  }
+                })
                 .processSync(content).contents
             }
           </Content>

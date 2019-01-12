@@ -49,4 +49,4 @@ some advantages:
 
 ## Extra: the slides
 
-`iframe:https://docs.google.com/presentation/d/1pIS0dhazArjoDHO1FLK1sEC8iO6rnGLw-WXFIiqafzc/embed?start=false&loop=false&delayms=3000`
+!(https://docs.google.com/presentation/d/1pIS0dhazArjoDHO1FLK1sEC8iO6rnGLw-WXFIiqafzc/embed?start=false&loop=false&delayms=3000)

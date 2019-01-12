@@ -10,7 +10,37 @@ During the migration of the feed component, I found a some lines that I didn't
 know how to code it on Angular 2. The following gist is an extract of the code
 I'm talking about:
 
-`gist:https://gist.github.com/magarcia/0a299cc1d352ad7e42a46d72817bc035.js?file=jh-feed.directive.js`
+```ts
+if (!feed.isLocalScreen) {
+  // Until this timeout is reached, the "you are muted" notification
+  // will not be displayed again
+  var mutedWarningTimeout = now();
+
+  scope.$on('muted.byRequest', function() {
+    mutedWarningTimeout = secondsFromNow(3);
+    MuteNotifier.muted();
+  });
+
+  scope.$on('muted.byUser', function() {
+    // Reset the warning timeout
+    mutedWarningTimeout = now();
+  });
+
+  scope.$on('muted.Join', function() {
+    mutedWarningTimeout = now();
+    MuteNotifier.joinedMuted();
+  });
+
+  scope.$watch('vm.feed.isVoiceDetected()', function(newVal) {
+    // Display warning only if muted (check for false, undefined means
+    // still connecting) and the timeout has been reached
+    if (newVal && feed.getAudioEnabled() === false && now() > mutedWarningTimeout) {
+      MuteNotifier.speaking();
+      mutedWarningTimeout = secondsFromNow(60);
+    }
+  });
+}
+```
 
 As you can see in the snippet, if the condition is true then the directive
 listens for events of type `muted.byRequest`, `muted.byUser` and `muted.Join`.
@@ -29,11 +59,60 @@ Basicaly the idea is to make a service that implements the `$broadcast` and
 `$on` method like we had in `$rootScope`. For do this we use Observables, very
 important in Angular 2, and in this case we use a [Subject](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/subjects.md).
 
-`gist:https://gist.github.com/magarcia/0a299cc1d352ad7e42a46d72817bc035.js?file=broadcaster.ts`
+```ts
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+
+interface BroadcastEvent {
+  key: any;
+  data?: any;
+}
+
+export class Broadcaster {
+  private _eventBus: Subject<BroadcastEvent>;
+
+  constructor() {
+    this._eventBus = new Subject<BroadcastEvent>();
+  }
+
+  broadcast(key: any, data?: any) {
+    this._eventBus.next({ key, data });
+  }
+
+  on<T>(key: any): Observable<T> {
+    return this._eventBus
+      .asObservable()
+      .filter(event => event.key === key)
+      .map(event => <T>event.data);
+  }
+}
+```
 
 So, now we can start to use events like in the example:
 
-`gist:https://gist.github.com/magarcia/0a299cc1d352ad7e42a46d72817bc035.js?file=example.component.ts`
+```ts
+// child.ts
+@Component({
+    selector: 'child'
+})
+export class ChildComponent {
+  constructor(private broadcaster: Broadcaster) {
+  }
+
+  registerStringBroadcast() {
+    this.broadcaster.on<string>('MyEvent')
+      .subscribe(message => {
+        ...
+      });
+  }
+
+  emitStringBroadcast() {
+    this.broadcaster.broadcast('MyEvent', 'some message');
+  }
+}
+```
 
 ## How I solved the problem?
 

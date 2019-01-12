@@ -35,7 +35,9 @@ export default class SocialShare extends Component {
     const { url, title } = this.props;
     const { visible, ssr } = this.state;
     return (
-      <aside className={`${css.aside} ${visible ? 'visible' : ''} ${ssr ? 'ssr-animation' : ''}`}>
+      <aside
+        className={`${css.aside} ${visible ? css.visible : ''} ${ssr ? css.ssrAnimation : ''}`}
+      >
         <a
           title="Share on Twitter"
           aria-label="Share on Twitter"

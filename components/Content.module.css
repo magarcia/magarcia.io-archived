@@ -24,7 +24,7 @@
   color: inherit;
 }
 .postContent code {
-  font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   font-size: 16px;
   background: rgba(0, 0, 0, 0.05);
   padding: 3px 4px;
@@ -98,8 +98,14 @@
   font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
   font-size: 16px;
 }
+
 .postContent pre code {
   background: transparent;
+  font-size: 13px;
+  line-height: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0;
 }
 .postContent ul {
   margin-top: 29px;

@@ -5,12 +5,12 @@ import PostEntry from '../components/PostEntry';
 import { paginate, getFileInfo } from '../lib';
 import css from './index.module.css';
 
-export default class App extends Component {
+export default class Index extends Component {
   static propTypes = {
     results: PropTypes.arrayOf(PropTypes.shape()).isRequired,
     total: PropTypes.number.isRequired,
     page: PropTypes.number.isRequired,
-    id: PropTypes.string.isRequired
+    limit: PropTypes.number.isRequired
   };
 
   static async getInitialProps(context) {
@@ -39,12 +39,12 @@ export default class App extends Component {
   }
 
   render() {
-    const { results, page, total, id } = this.props;
+    const { results, page, total } = this.props;
     return (
       <>
         <ul className={css.list}>
           {results.map(props => (
-            <PostEntry key={id} {...props} />
+            <PostEntry key={props.id} {...props} />
           ))}
         </ul>
         <Pagination total={total} page={page} />

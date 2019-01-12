@@ -4,9 +4,9 @@ import css from './MetaInfo.module.css';
 
 const MetaInfo = ({ year, month, day, readingTime, small = false }) => (
   <div className={`${css.postMetaInline} ${small ? css.small : ''}`}>
-    <Moment date={`${year}-${month}-${day}`} format="ll" />
+    <Moment date={new Date(year, month - 1, day)} format="ll" />
     <span className={css.middotDivider} />
-    <span className={css.readingTime} title={readingTime.text} />
+    <span className={css.readingTime} title={readingTime} />
   </div>
 );
 

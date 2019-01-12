@@ -28,7 +28,7 @@
 .aside a:hover {
   opacity: 1;
 }
-.ssr-animation {
+.ssrAnimation {
   animation-delay: 2s;
   animation-duration: 0.3s;
   animation-name: toggle;

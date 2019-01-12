@@ -3,7 +3,7 @@ const fs = require('fs');
 const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
 const withImages = require('next-images');
-const withCSS = require('@zeit/next-css');
+const withCSS = require('./lib/next-css');
 
 const range = size =>
   Array(size)
