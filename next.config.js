@@ -25,7 +25,7 @@ module.exports = withPlugins(
     ]
   ],
   {
-    exportPathMap: function() {
+    exportPathMap: () => {
       // TODO: Refactor or Extract to plugin
       const files = fs.readdirSync(postsFolder);
       const posts = files

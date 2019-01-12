@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import remark from 'remark';
 import remarkReact from 'remark-react';
 import MetaInfo from './MetaInfo';
 import Content from './Content';
 import css from './PostEntry.module.css';
 
-export default ({ year, month, day, slug, title, intro, readingTime }) => (
+const PostLink = ({ year, month, day, slug, title, intro, readingTime }) => (
   <li className={css.li}>
     <Link
       as={`/${year}/${month}/${day}/${slug}`}
@@ -16,7 +17,7 @@ export default ({ year, month, day, slug, title, intro, readingTime }) => (
       </a>
     </Link>
     <div className={css.summary}>
-      <Content small={true}>
+      <Content small>
         {
           remark()
             .use(remarkReact)
@@ -24,6 +25,18 @@ export default ({ year, month, day, slug, title, intro, readingTime }) => (
         }
       </Content>
     </div>
-    <MetaInfo {...{ year, month, day, readingTime }} small={true} />
+    <MetaInfo {...{ year, month, day, readingTime }} small />
   </li>
 );
+
+PostLink.propTypes = {
+  year: PropTypes.number.isRequired,
+  month: PropTypes.number.isRequired,
+  day: PropTypes.number.isRequired,
+  slug: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  intro: PropTypes.string.isRequired,
+  readingTime: PropTypes.string.isRequired
+};
+
+export default PostLink;

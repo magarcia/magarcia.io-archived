@@ -1,14 +1,15 @@
+import PropTypes from 'prop-types';
 import Pagination from '../components/Pagination';
 import PostEntry from '../components/PostEntry';
 import { paginate, getFileInfo } from '../lib';
 import css from './index.module.css';
 
-const App = ({ results, page, total }) => (
+const App = ({ results, page, total, id }) => (
   <>
     <ul className={css.list}>
-      {results.map(props => {
-        return <PostEntry key={props.id} {...props} />;
-      })}
+      {results.map(props => (
+        <PostEntry key={id} {...props} />
+      ))}
     </ul>
     <Pagination total={total} page={page} />
   </>
@@ -38,6 +39,13 @@ App.getInitialProps = async function(context) {
   return {
     ...posts
   };
+};
+
+App.propTypes = {
+  results: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  total: PropTypes.number.isRequired,
+  page: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired
 };
 
 export default App;

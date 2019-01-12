@@ -1,2 +1,10 @@
+import PropTypes from 'prop-types';
 import css from './Content.module.css';
-export default ({ children, small = false }) => <div className={css.postContent}>{children}</div>;
+
+const Content = ({ children }) => <div className={css.postContent}>{children}</div>;
+
+Content.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
+};
+
+export default Content;

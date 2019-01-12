@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
           <link
             href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:600|Playfair+Display:700"
