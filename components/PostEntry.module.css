@@ -1,0 +1,21 @@
+.titleLink {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.84);
+}
+.titleLink h2 {
+  overflow: hidden;
+  max-height: 84px;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.li {
+  margin-bottom: 48px;
+}
+.summary p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

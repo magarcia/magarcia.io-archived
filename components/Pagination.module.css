@@ -1,0 +1,18 @@
+.page {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.84);
+  border: 1px solid rgba(0, 0, 0, 0.84);
+  margin-right: 10px;
+  padding: 2px 12px;
+  border-radius: 2px;
+  font-family: 'Open Sans', sans-serif;
+}
+.page:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 1);
+}
+.page.active {
+  opacity: 0.5;
+  cursor: default;
+  color: rgba(0, 0, 0, 0.84);
+}

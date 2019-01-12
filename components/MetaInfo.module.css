@@ -1,0 +1,23 @@
+.postMetaInline {
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: '16px';
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.54);
+  margin: 24px 0;
+}
+.postMetaInline.small {
+  font-size: '15px';
+}
+.middotDivider {
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  font-size: 15px;
+}
+.middotDivider:after {
+  content: '\00B7';
+}
+.readingTime:after {
+  content: attr(title);
+}
