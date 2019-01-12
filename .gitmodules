@@ -1,0 +1,4 @@
+[submodule "out"]
+	path = out
+	url = git@github.com:magarcia/magarcia.github.io.git
+	branch = master
