@@ -25,7 +25,7 @@
     "preexport": "npm run build",
     "export": "next export",
     "predeploy": "npm run export",
-    "deploy": "cd out && git commit -m 'Rebuild of the site' && git push origin master",
+    "deploy": "cd out && touch .nojekyll && git add . && git commit -m 'Rebuild of the site' && git push origin master",
     "precommit": "NODE_ENV=production lint-staged"
   },
   "dependencies": {
