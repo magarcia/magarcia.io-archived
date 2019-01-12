@@ -65,7 +65,12 @@
     "webp-loader": "^0.4.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
@@ -79,7 +84,10 @@
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
-    "pretty-quick": "^1.8.0"
+    "pretty-quick": "^1.8.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.7.0",
+    "regenerator-runtime": "^0.13.1"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -87,5 +95,11 @@
       "eslint src/ --fix",
       "git add"
     ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
+    }
   }
 }
