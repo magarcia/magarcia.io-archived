@@ -4,8 +4,8 @@ import css from './SocialShare.module.css';
 
 export default class SocialShare extends Component {
   static propTypes = {
-    url: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
   };
 
   state = {
@@ -32,7 +32,7 @@ export default class SocialShare extends Component {
   }
 
   render() {
-    const { url, title } = this.props;
+    const { title, url } = this.props;
     const { visible, ssr } = this.state;
     return (
       <aside

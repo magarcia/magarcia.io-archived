@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { range } from '../lib';
+import { range } from '../../lib/utils';
 import css from './Pagination.module.css';
 
 const Pagination = ({ total, page }) => (

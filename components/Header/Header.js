@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Gravatar from 'react-gravatar';
 import css from './Header.module.css';
 
-const Header = () => (
+export default () => (
   <div className={css.bar}>
     <div className={css.content}>
       <div className={css.block}>
@@ -21,5 +21,3 @@ const Header = () => (
     </div>
   </div>
 );
-
-export default Header;
