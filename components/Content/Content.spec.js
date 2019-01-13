@@ -9,6 +9,7 @@ it('renders correctly', () => {
         {'# Header'}
         {'Some markdown content'}
         {'![miskohevery](../static/img/angularbeers-with-misko-hevery.jpg)'}
+        {'!(http://iframe.example.com)'}
       </Content>
     )
     .toJSON();
