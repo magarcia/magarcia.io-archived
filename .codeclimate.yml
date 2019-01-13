@@ -1,12 +1,2 @@
 exclude_patterns:
-- "**/*.spec.js"
-plugins:
-  eslint:
-    enabled: true
-    config:
-    config: .eslintrc.json
-      extensions:
-        - .es6
-        - .js
-        - .jsx
-        - .mjs
+  - '**/*.spec.js'
