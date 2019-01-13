@@ -2,6 +2,7 @@ plugins:
   eslint:
     enabled: true
     config:
+    config: .eslintrc.json
       extensions:
         - .es6
         - .js
