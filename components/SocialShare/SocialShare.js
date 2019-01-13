@@ -7,18 +7,18 @@ const NETWORKS = [
     name: 'Twitter',
     urlBuilder: (title, url) =>
       `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=martinprins`,
-    logo: require('../../static/img/twitter.svg')
+    logo: require('../../static/img/twitter.svg') // eslint-disable-line global-require
   },
   {
     name: 'Facebook',
     urlBuilder: (_, url) => `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-    logo: require('../../static/img/facebook.svg')
+    logo: require('../../static/img/facebook.svg') // eslint-disable-line global-require
   },
   {
     name: 'LinkedIn',
     urlBuilder: (title, url) =>
       `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&source=https%3A//www.linkedin.com/in/martingarciamonterde/`,
-    logo: require('../../static/img/linkedin.svg')
+    logo: require('../../static/img/linkedin.svg') // eslint-disable-line global-require
   }
 ];
 export default class SocialShare extends Component {
@@ -66,7 +66,7 @@ export default class SocialShare extends Component {
             rel="noopener noreferrer"
             href={urlBuilder(title, url)}
           >
-            <img src={logo} width={24} height={24} />
+            <img src={logo} width={24} height={24} alt={name} />
           </a>
         ))}
       </aside>
