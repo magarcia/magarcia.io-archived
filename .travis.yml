@@ -10,10 +10,16 @@ before_install:
   - npm update
 install:
   - npm install
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-buil
 script:
   - npm run lint
   - npm run test:ci
   - npm run coverage:ci
+after_script:
+  - ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
 deploy:
   provider: script
   skip_cleanup: true
