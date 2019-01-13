@@ -11,7 +11,7 @@ It was a talk about what is coming with Angular 2 and the key point with which
 we have to stay is that Angluar leave the concept of frontend framework to
 become a full a platform.
 
-![miskohevery](https://magarcia.github.io/img/angularbeers-with-misko-hevery.jpg)
+![miskohevery](../static/img/angularbeers-with-misko-hevery.jpg)
 _Sara (a good coworker and better friend), Miško and me_
 
 But, a part from this, I would like to remark a couple of things that will make

@@ -13,6 +13,7 @@ import js from 'highlight.js/lib/languages/javascript';
 import MetaInfo from '../components/MetaInfo';
 import Content from '../components/Content';
 import SocialShare from '../components/SocialShare';
+import Image from '../components/Image';
 import css from './post.module.css';
 import './highlightjs.css';
 
@@ -68,6 +69,7 @@ class Post extends Component {
                       ts,
                       js
                     }),
+                    img: Image,
                     p: ({ children }) => {
                       if (children[0] === '!(') {
                         return (

@@ -140,3 +140,7 @@
 .postContent strong {
   font-weight: 700;
 }
+
+.postContent img {
+  width: 100%;
+}
