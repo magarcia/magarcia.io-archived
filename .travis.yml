@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - 'stable'
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm update
+install:
+  - npm install
+script:
+  - npm run lint
+  - npm run test:ci
+  - npm run coveralls:ci
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: npm run deploy:ci
+on:
+  branch: master
