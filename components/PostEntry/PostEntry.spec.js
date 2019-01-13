@@ -2,8 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import PostEntry from './PostEntry';
 
-jest.mock('../../lib/images');
-
 it('renders correctly', () => {
   const props = {
     id: 'id',
