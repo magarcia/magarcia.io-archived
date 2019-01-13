@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import remark from 'remark';
 import reactRender from 'remark-react';
 import lowlight from 'remark-react-lowlight';
 import githubSchema from 'hast-util-sanitize/lib/github.json';
 import ts from 'highlight.js/lib/languages/typescript';
 import js from 'highlight.js/lib/languages/javascript';
+import { childrenShape } from '../../lib/propTypes';
 import Image from './Image';
 import PWithIframe from './PWithIframe';
 import css from './Content.module.css';
@@ -37,7 +37,7 @@ const Content = ({ children }) => (
 );
 
 Content.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
+  children: childrenShape.isRequired
 };
 
 export default Content;

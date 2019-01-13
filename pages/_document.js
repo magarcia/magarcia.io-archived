@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
           <link
             href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:600|Playfair+Display:700"
             rel="stylesheet"
-            lazyload
+            lazyload="true"
           />
         </body>
       </html>

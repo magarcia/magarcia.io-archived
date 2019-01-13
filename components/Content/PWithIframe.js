@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { childrenShape } from '../../lib/propTypes';
 
 const PWithIframe = ({ children }) => {
   let width = 700;
@@ -22,7 +22,7 @@ const PWithIframe = ({ children }) => {
 };
 
 PWithIframe.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
+  children: childrenShape.isRequired
 };
 
 export default PWithIframe;
