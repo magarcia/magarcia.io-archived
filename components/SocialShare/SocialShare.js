@@ -1,8 +1,5 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import TwitterLogo from './TwitterLogo';
-import FacebookLogo from './FacebookLogo';
-import LinkedInLogo from './LinkedInLogo';
 import css from './SocialShare.module.css';
 
 const NETWORKS = [
@@ -10,18 +7,18 @@ const NETWORKS = [
     name: 'Twitter',
     urlBuilder: (title, url) =>
       `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=martinprins`,
-    Logo: TwitterLogo
+    logo: require('../../static/img/twitter.svg')
   },
   {
     name: 'Facebook',
     urlBuilder: (_, url) => `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-    Logo: FacebookLogo
+    logo: require('../../static/img/facebook.svg')
   },
   {
     name: 'LinkedIn',
     urlBuilder: (title, url) =>
       `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&source=https%3A//www.linkedin.com/in/martingarciamonterde/`,
-    Logo: LinkedInLogo
+    logo: require('../../static/img/linkedin.svg')
   }
 ];
 export default class SocialShare extends Component {
@@ -60,7 +57,7 @@ export default class SocialShare extends Component {
       <aside
         className={`${css.aside} ${visible ? css.visible : ''} ${ssr ? css.ssrAnimation : ''}`}
       >
-        {NETWORKS.map(({ name, urlBuilder, Logo }) => (
+        {NETWORKS.map(({ name, urlBuilder, logo }) => (
           <a
             title={`Share on ${name}`}
             key={name}
@@ -69,7 +66,7 @@ export default class SocialShare extends Component {
             rel="noopener noreferrer"
             href={urlBuilder(title, url)}
           >
-            <Logo />
+            <img src={logo} width={24} height={24} />
           </a>
         ))}
       </aside>
