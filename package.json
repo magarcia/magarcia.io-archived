@@ -20,7 +20,7 @@
     "test": "jest",
     "test:ci": "jest",
     "coverage": "jest --coverage",
-    "coverage:ci": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
+    "coverage:ci": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "prebuild": "npm run test",
     "build": "next build",
     "start": "next start",
