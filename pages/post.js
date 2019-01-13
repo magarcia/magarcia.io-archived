@@ -56,7 +56,7 @@ class Post extends Component {
     return (
       <>
         <article className={css.article}>
-          <h1 className={css.title}>{title}</h1>
+          <h1 className={css.contentTitle}>{title}</h1>
           <MetaInfo {...{ year, month, day, readingTime }} />
           <Content>
             {

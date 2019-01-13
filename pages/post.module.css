@@ -3,7 +3,7 @@
   word-break: break-word;
   word-wrap: break-word;
 }
-.title {
+.contentTitle {
   padding-top: 16px;
   font-style: normal;
   font-weight: 400;
@@ -11,4 +11,5 @@
   letter-spacing: 0;
   font-size: 42px;
   margin: 0;
+  font-family: 'Lora', Georgia, Cambria, 'Times New Roman', Times, serif;
 }
