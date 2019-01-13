@@ -2,6 +2,7 @@ import { withRouter } from 'next/router';
 import { Component } from 'react';
 import { MetaInfo, Content, SocialShare } from '../components';
 import { getPost } from '../lib/api';
+import { origin } from '../lib/utils';
 import { postShape } from '../lib/propTypes';
 import css from './post.module.css';
 
@@ -21,7 +22,7 @@ class Post extends Component {
           <MetaInfo {...metadata} />
           <Content>{content}</Content>
         </article>
-        <SocialShare title={title} url={metadata.url} />
+        <SocialShare title={title} url={`${origin()}${metadata.url}`} />
       </>
     );
   }
