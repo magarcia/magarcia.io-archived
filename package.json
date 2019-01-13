@@ -29,7 +29,7 @@
     "predeploy": "npm run export",
     "deploy:only": "cd out && touch .nojekyll && git add . && git commit -m 'Rebuild of the site' && git push origin master",
     "deploy": "npm run deploy:only",
-    "deploy:ci": "next build && next export && npm run deploy:only",
+    "deploy:ci": "next build && next export && bash ./deploy.sh",
     "precommit": "NODE_ENV=production lint-staged && npm run lint",
     "dev": "next dev"
   },
