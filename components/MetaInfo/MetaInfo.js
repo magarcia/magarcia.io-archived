@@ -1,6 +1,6 @@
 import Moment from 'react-moment';
+import PropTypes from 'prop-types';
 import css from './MetaInfo.module.css';
-import { postMetadataShape } from '../../lib/propTypes';
 
 const MetaInfo = ({ date, readingTime, small = false }) => (
   <div className={`${css.postMetaInline} ${small ? css.small : ''}`}>
@@ -10,7 +10,11 @@ const MetaInfo = ({ date, readingTime, small = false }) => (
   </div>
 );
 
-MetaInfo.propTypes = postMetadataShape;
+MetaInfo.propTypes = {
+  date: PropTypes.string.isRequired,
+  readingTime: PropTypes.string.isRequired,
+  small: PropTypes.bool
+};
 
 MetaInfo.defaultProps = {
   small: false

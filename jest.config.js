@@ -2,5 +2,8 @@ module.exports = {
   setupFiles: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   collectCoverage: true,
-  coverageReporters: ['lcov']
+  coverageReporters: ['lcov'],
+  moduleNameMapper: {
+    '\\.css$': 'identity-obj-proxy'
+  }
 };

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="bar"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="block"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <h1
+          className="title"
+        >
+          magarcia
+        </h1>
+      </a>
+    </div>
+    <div
+      className="block right"
+    >
+      <img
+        alt="Gravatar for newluxfero@gmail.com"
+        className="react-gravatar avatar"
+        height={48}
+        src="//www.gravatar.com/avatar/eaf59739836cc2f138c202d05256323d?d=retro&r=g&s=48"
+        srcSet="//www.gravatar.com/avatar/eaf59739836cc2f138c202d05256323d?d=retro&r=g&s=96 2x"
+        width={48}
+      />
+    </div>
+  </div>
+</div>
+`;
