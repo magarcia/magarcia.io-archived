@@ -26,7 +26,7 @@
     "export": "next export",
     "predeploy": "npm run export",
     "deploy": "cd out && touch .nojekyll && git add . && git commit -m 'Rebuild of the site' && git push origin master",
-    "precommit": "NODE_ENV=production lint-staged"
+    "precommit": "NODE_ENV=production lint-staged && npm run lint"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
