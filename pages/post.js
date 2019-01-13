@@ -14,6 +14,7 @@ import MetaInfo from '../components/MetaInfo';
 import Content from '../components/Content';
 import SocialShare from '../components/SocialShare';
 import Image from '../components/Image';
+import PWithIframe from '../components/PWithIframe';
 import css from './post.module.css';
 import './highlightjs.css';
 
@@ -70,21 +71,7 @@ class Post extends Component {
                       js
                     }),
                     img: Image,
-                    p: ({ children }) => {
-                      if (children[0] === '!(') {
-                        return (
-                          <iframe
-                            src={children[1].props.href}
-                            title={children[1].props.href}
-                            frameBorder="0"
-                            width="700"
-                            height="394"
-                            allowFullScreen
-                          />
-                        );
-                      }
-                      return <p>{children}</p>;
-                    }
+                    p: PWithIframe
                   }
                 })
                 .processSync(content).contents
