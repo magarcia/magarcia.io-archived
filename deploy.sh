@@ -8,7 +8,7 @@ setup_git() {
 commit_website_files() {
   cd public
   git add .
-  echot "running: git commit --message \"Travis build: $TRAVIS_BUILD_NUMBER\""
+  echo "running: git commit --message \"Travis build: $TRAVIS_BUILD_NUMBER\""
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
