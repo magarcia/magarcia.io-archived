@@ -77,7 +77,7 @@ module.exports = {
               allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at magarcia.github.io. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at magarcia.io. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `;
 

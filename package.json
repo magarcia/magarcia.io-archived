@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Martin Garcia <newluxfero@gmail.com>",
   "bugs": {
-    "url": "https://github.com/magarcia/magarcia.github.io/issues"
+    "url": "https://github.com/magarcia/magarcia.io/issues"
   },
   "dependencies": {
     "gatsby": "^2.0.76",
@@ -56,7 +56,7 @@
     "prettier": "^1.14.2",
     "react-test-renderer": "^16.7.0"
   },
-  "homepage": "https://magarcia.github.io",
+  "homepage": "https://magarcia.io",
   "license": "MIT",
   "scripts": {
     "start": "npm run dev",

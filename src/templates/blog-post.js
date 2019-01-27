@@ -9,13 +9,13 @@ import { buildPath, formatPostDate, formatReadingTime } from '../utils/helpers';
 import '../styles/hightlight.css';
 
 const GITHUB_USERNAME = 'magarcia';
-const GITHUB_REPO_NAME = 'blog';
+const GITHUB_REPO_NAME = 'magarcia.io';
 
 export default ({ data, location, pageContext }) => {
   const post = data.markdownRemark;
   const siteTitle = get(data, 'site.siteMetadata.title');
   const { previous, next, slug, date } = pageContext;
-  const url = `https://magarcia.github.io${buildPath(date, slug)}`;
+  const url = `https://magarcia.io${buildPath(date, slug)}`;
 
   const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages${slug}/index.md`;
   const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(url)}`;
