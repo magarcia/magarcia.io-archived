@@ -59,21 +59,26 @@
   "homepage": "https://magarcia.github.io",
   "license": "MIT",
   "scripts": {
+    "start": "npm run dev",
     "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx src",
+    "dry": "npm build && cd public && npx static-server",
+    "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
+    "prelint": "npm run format",
+    "lint:only": "./node_modules/.bin/eslint --ext .js,.jsx src",
+    "lint": "npm run lint:only",
     "pretest": "npm run lint",
     "test": "jest",
     "test:ci": "jest",
     "coverage": "jest --coverage",
     "coverage:ci": "jest --coverage && cat ./coverage/lcov.info",
     "prebuild": "npm run test",
-    "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
-    "start": "npm run dev",
-    "build": "rm -rf public/* && rm -rf .cache && gatsby build",
+    "build:only": "rm -rf public/* && rm -rf .cache && gatsby build",
+    "build": "npm run build:only",
+    "build:ci": "npm run build:only",
     "predeploy": "npm run build",
-    "deploy": "cd public && touch .nojekyll && git add . && git commit --no-verify -m 'Rebuild of the site' && git push origin master",
-    "deploy:ci": "npm run build && bash ./deploy.sh",
-    "dry": "npm build && cd public && npx static-server"
+    "deploy:only": "firebase deploy",
+    "deploy": "npm run deploy:only",
+    "deploy:ci": "firebase deploy --token=${FIREBASE_API_TOKEN}"
   },
   "husky": {
     "hooks": {
