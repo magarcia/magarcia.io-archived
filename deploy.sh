@@ -8,11 +8,14 @@ setup_git() {
 commit_website_files() {
   cd public
   git add .
+  echot "running: git commit --message \"Travis build: $TRAVIS_BUILD_NUMBER\""
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
+  echo "running: git remote add origin-page https://${GH_TOKEN}@github.com/magarcia/magarcia.github.io.git > /dev/null 2>&1"
   git remote add origin-page https://${GH_TOKEN}@github.com/magarcia/magarcia.github.io.git > /dev/null 2>&1
+  echo "running: git push --quiet --set-upstream origin-page master"
   git push --quiet --set-upstream origin-page master 
 }
 
