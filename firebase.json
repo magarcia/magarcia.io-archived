@@ -29,6 +29,15 @@
             "value": "max-age=31536000"
           }
         ]
+      },
+      {
+        "source": "static/d/**/*.@(json)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
       }
     ]
   }
