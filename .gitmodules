@@ -1,4 +1,4 @@
 [submodule "public"]
 	path = public
-	url = git@github.com:magarcia/magarcia.github.io.git
+	url = ../../magarcia/magarcia.github.io.git
 	branch = master
