@@ -13,10 +13,10 @@ commit_website_files() {
 }
 
 upload_files() {
-  echo "running: git remote add origin-page https://${GH_TOKEN}@github.com/magarcia/magarcia.github.io.git > /dev/null 2>&1"
-  git remote add origin-page https://${GH_TOKEN}@github.com/magarcia/magarcia.github.io.git > /dev/null 2>&1
-  echo "running: git push --quiet --set-upstream origin-page master"
-  git push --quiet --set-upstream origin-page master 
+  echo "running: git remote add origin-page https://${GH_TOKEN}@github.com/magarcia/magarcia.github.io.git"
+  git remote add origin-page https://${GH_TOKEN}@github.com/magarcia/magarcia.github.io.git
+  echo "running: git push --set-upstream origin-page master"
+  git push --set-upstream origin-page master 
 }
 
 setup_git
