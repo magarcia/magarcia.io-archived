@@ -147,11 +147,14 @@ h6 > a {
 
 mark,
 ::selection {
-  background: rgb(250, 240, 20);
+  background: rgba(250, 240, 20, 0.3);
   text-shadow: none;
   padding: 0 3px;
 }
 
+mark {
+  background: rgba(250, 240, 20, 1);
+}
 .header,
 main,
 .footer {
@@ -203,10 +206,6 @@ nav ul {
 }
 .info {
   color: hsla(200, 0%, 0%, 0.55);
-}
-.info::selection,
-.info *::selection {
-  background: rgba(250, 240, 20, 0.2);
 }
 
 .post-list header h3 {
