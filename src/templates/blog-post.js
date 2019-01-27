@@ -5,7 +5,7 @@ import get from 'lodash/get';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import SocialShare from '../components/SocialShare';
-import { formatPostDate, formatReadingTime } from '../utils/helpers';
+import { buildPath, formatPostDate, formatReadingTime } from '../utils/helpers';
 import '../styles/hightlight.css';
 
 const GITHUB_USERNAME = 'magarcia';
