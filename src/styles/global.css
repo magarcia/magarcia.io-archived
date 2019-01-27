@@ -202,7 +202,7 @@ nav ul {
   flex-wrap: wrap;
 }
 .info {
-  color: #bbb;
+  color: hsla(200, 0%, 0%, 0.55);
 }
 .info::selection,
 .info *::selection {
