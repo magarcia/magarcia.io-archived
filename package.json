@@ -53,6 +53,7 @@
     "gh-pages": "^1.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.0.0",
+    "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
     "prettier": "^1.14.2",
     "react-test-renderer": "^16.7.0"
   },
@@ -61,6 +62,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "gatsby develop",
+    "lh": "lighthouse-ci",
     "dry": "npm build && cd public && npx static-server",
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "prelint": "npm run format",

@@ -1,3 +1,4 @@
 src/assets/.*.svg
 src/pages/.*/.*.md
 public/.*
+package-lock.json

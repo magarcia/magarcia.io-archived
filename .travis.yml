@@ -27,5 +27,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script: npm run deploy:ci
+after_success:
+  - npm run lh -- --perf=96 --a11y=100 --seo=100 --bp=100 https://magarcia.io
 on:
   branch: master
