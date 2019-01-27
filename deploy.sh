@@ -13,7 +13,6 @@ commit_website_files() {
 
 upload_files() {
   git remote add origin-page https://${GH_TOKEN}@github.com/magarcia/magarcia.github.io.git > /dev/null 2>&1
-  git pull --rebase
   git push --quiet --set-upstream origin-page master 
 }
 
