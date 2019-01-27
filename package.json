@@ -78,7 +78,7 @@
     "predeploy": "npm run build",
     "deploy:only": "firebase deploy",
     "deploy": "npm run deploy:only",
-    "deploy:ci": "firebase deploy --token=${FIREBASE_API_TOKEN}"
+    "deploy:ci": "firebase deploy --token=${FIREBASE_API_TOKEN} --project magarciaio"
   },
   "husky": {
     "hooks": {
