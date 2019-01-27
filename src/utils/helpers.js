@@ -12,3 +12,7 @@ export function formatPostDate(date, lang = 'en') {
   const args = [lang, { day: 'numeric', month: 'long', year: 'numeric' }].filter(Boolean);
   return date.toLocaleDateString(...args);
 }
+
+export function buildPath(date, slug) {
+  return `/${date.replace(/-/g, '/')}${slug}`;
+}

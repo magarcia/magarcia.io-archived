@@ -22,9 +22,7 @@ const BlogIndex = ({ location, data }) => {
             <article key={node.fields.slug}>
               <header>
                 <h3>
-                  <Link to={`/${node.frontmatter.dateRaw.replace(/-/g, '/')}${node.fields.slug}`}>
-                    {title}
-                  </Link>
+                  <Link to={buildPath(node.frontmatter.dateRaw, node.fields.slug)}>{title}</Link>
                 </h3>
                 <small className="info">
                   <time dateTime={node.frontmatter.dateRaw}>

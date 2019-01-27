@@ -50,15 +50,12 @@ export default ({ data, location, pageContext }) => {
         </footer>
         <nav>
           <ul>
-            {[[previous, 'prev'], [next, 'next']].map(([post, rel]) => (
+            {[[previous, 'prev'], [next, 'next']].map(([p, rel]) => (
               <li>
-                {post && (
-                  <Link
-                    to={`/${post.frontmatter.date.replace(/-/g, '/')}${post.fields.slug}`}
-                    rel={rel}
-                  >
+                {p && (
+                  <Link to={buildPath(p.frontmatter.date, p.fields.slug)} rel={rel}>
                     {rel === 'prev' && `← `}
-                    {post.frontmatter.title}
+                    {p.frontmatter.title}
                     {rel === 'next' && ` →`}
                   </Link>
                 )}
