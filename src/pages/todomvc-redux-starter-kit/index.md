@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Refactor TodoMVC with Redux Starter Kit
-date: "2019-01-26"
+date: '2019-01-26'
 spoiler: How to make redux related code more readable.
 draft: false
 tags:
@@ -22,9 +22,9 @@ the tools it provides, `createReducer`, is a patter I've been using for a while
 and it helps me a lot on reducing boilerplate code and speeding up my development
 (especially in new projects).
 
-So in order to learn more about and get comfortable using it I decided to
+So in order to learn more about and get comfortable using it, I decided to
 migrate an already existing codebase with Redux, using this toolset. Obviously,
-as an example project for a frontend framework I picked the omnipresent
+as an example project for a frontend framework, I picked the omnipresent
 [TodoMVC](http://todomvc.com/), in concrete the version that Redux provides as
 example in [his repository](https://github.com/reduxjs/redux/tree/master/examples/todomvc).
 
@@ -46,8 +46,8 @@ easy to understand.
 
 ```jsx
 // reducers/visibilityFilter.js
-import { SET_VISIBILITY_FILTER } from "../constants/ActionTypes";
-import { SHOW_ALL } from "../constants/TodoFilters";
+import { SET_VISIBILITY_FILTER } from '../constants/ActionTypes';
+import { SHOW_ALL } from '../constants/TodoFilters';
 
 export default (state = SHOW_ALL, action) => {
   switch (action.type) {
@@ -74,9 +74,9 @@ This is how the visibility filter reducer looks like using `createReducer`:
 
 ```jsx
 // reducers/visibilityFilter.js
-import { createReducer } from "redux-starter-kit";
-import { SET_VISIBILITY_FILTER } from "../constants/ActionTypes";
-import { SHOW_ALL } from "../constants/TodoFilters";
+import { createReducer } from 'redux-starter-kit';
+import { SET_VISIBILITY_FILTER } from '../constants/ActionTypes';
+import { SHOW_ALL } from '../constants/TodoFilters';
 
 export default createReducer(SHOW_ALL, {
   [SET_VISIBILITY_FILTER]: (state, action) => action.filter
@@ -90,7 +90,7 @@ Now is time for the actions. The visibility filter only has one action
 
 ```jsx
 // actions/index.js
-import * as types from "../constants/ActionTypes";
+import * as types from '../constants/ActionTypes';
 
 /* ... Other actions ...*/
 export const setVisibilityFilter = filter => ({
@@ -105,23 +105,23 @@ we get an action creator.
 
 ```jsx
 // actions/index.js
-import * as types from "../constants/ActionTypes";
+import * as types from '../constants/ActionTypes';
 
 /* ... Other actions ...*/
 export const setVisibilityFilter = createAction(types.SET_VISIBILITY_FILTER);
 ```
 
 This action creator can be run with or without parameters. In the case that we
-send a parameter this will be set as the payload of the action. This are some
+send a parameter, this will be set as the payload of the action. These are some
 examples of how will work:
 
 ```jsx
-const setVisibilityFilter = createAction("SET_VISIBILITY_FILTER");
+const setVisibilityFilter = createAction('SET_VISIBILITY_FILTER');
 
 let action = setVisibilityFilter();
 // { type: 'SET_VISIBILITY_FILTER' }
 
-action = setVisibilityFilter("SHOW_COMPLETED");
+action = setVisibilityFilter('SHOW_COMPLETED');
 // returns { type: 'SET_VISIBILITY_FILTER', payload: 'SHOW_COMPLETED' }
 
 setVisibilityFilter.toString();
@@ -134,9 +134,9 @@ very simple to change.
 
 ```jsx
 // reducers/visibilityFilter.js
-import { createReducer } from "redux-starter-kit";
-import { SET_VISIBILITY_FILTER } from "../constants/ActionTypes";
-import { SHOW_ALL } from "../constants/TodoFilters";
+import { createReducer } from 'redux-starter-kit';
+import { SET_VISIBILITY_FILTER } from '../constants/ActionTypes';
+import { SHOW_ALL } from '../constants/TodoFilters';
 
 export default createReducer(SHOW_ALL, {
   [SET_VISIBILITY_FILTER]: (state, action) => action.payload
@@ -146,11 +146,11 @@ export default createReducer(SHOW_ALL, {
 ### Selectors
 
 For me using selectors is one of the best choices that anyone can take when
-working with react, because it makes really simple refactor how the state looks
+working with React, because it makes really simple refactor how the state looks
 like without having to change all the components that are consuming this part
 of the state.
 
-The selector of the visibility filter is one of the most easy ones:
+The selector of the visibility filter is one of the easiest ones:
 
 ```jsx
 // selectors/index.js
@@ -165,9 +165,9 @@ to be simpler. Just keep reading.
 
 ```jsx
 // selectors/index.js
-import { createSelector } from "redux-starter-kit";
+import { createSelector } from 'redux-starter-kit';
 
-const getVisibilityFilter = createSelector(["visibilityFilter"]);
+const getVisibilityFilter = createSelector(['visibilityFilter']);
 
 /* ... Other selectors ...*/
 ```
@@ -190,10 +190,10 @@ it's removing a lot of boilerplate.
 
 ```jsx
 // ducks/visibilityFilter.js
-import { createSlice } from "redux-starter-kit";
+import { createSlice } from 'redux-starter-kit';
 
 export default createSlice({
-  slice: "visibilityFilter",
+  slice: 'visibilityFilter',
   initialState: SHOW_ALL,
   reducers: {
     setVisibilityFilter: (state, action) => action.payload
@@ -201,7 +201,7 @@ export default createSlice({
 });
 ```
 
-Now we have a single object as a result containing all what we need to work
+Now we have a single object as a result containing all that we need to work
 properly with Redux. This is how it can be used:
 
 ```jsx
@@ -227,13 +227,13 @@ The todos reducer is more complex so I'm not going to show the refactor step by
 step. Instead, I'm going to explain how the final result looks like, but if you
 are interested in see directly the final result is [here](https://github.com/magarcia/todomvc-redux-starter-kit/blob/ba531a2ea7c2c5ee8148e2a1ab491e7e0a31e819/src/ducks/todos.js).
 
-The first part is defining the inital state:
+The first part is defining the initial state:
 
 ```jsx
 // ducks/todos.js
 const initialState = [
   {
-    text: "Use Redux",
+    text: 'Use Redux',
     completed: false,
     id: 0
   }
@@ -254,21 +254,16 @@ const addTodo = (state, action) => [
   }
 ];
 
-const deleteTodo = (state, action) =>
-  state.filter(todo => todo.id !== action.payload.id);
+const deleteTodo = (state, action) => state.filter(todo => todo.id !== action.payload.id);
 
 const editTodo = (state, action) =>
   state.map(todo =>
-    todo.id === action.payload.id
-      ? { ...todo, text: action.payload.text }
-      : todo
+    todo.id === action.payload.id ? { ...todo, text: action.payload.text } : todo
   );
 
 const completeTodo = (state, action) =>
   state.map(todo =>
-    todo.id === action.payload.id
-      ? { ...todo, completed: !todo.completed }
-      : todo
+    todo.id === action.payload.id ? { ...todo, completed: !todo.completed } : todo
   );
 const completeAllTodos = state => {
   const areAllMarked = state.every(todo => todo.completed);
@@ -286,7 +281,7 @@ And now we can put all together in a new slice:
 ```jsx
 // ducks/todos.js
 const todos = createSlice({
-  slice: "todos",
+  slice: 'todos',
   initialState,
   reducers: {
     add: addTodo,
@@ -299,9 +294,9 @@ const todos = createSlice({
 });
 ```
 
-By default the selectors returned by `createSlice` are very simples, they just
+By default the selectors returned by `createSlice` are very simple, they just
 return the value from the state (eg: `todos.selectors.getTodos`). But in this
-application we need to define more complex selectors.
+application, we need to define more complex selectors.
 
 For example, `getVisibleTodos` needs two know about the current visibility filter
 and also the todos. `createSelector` gets as a first parameter an array with
@@ -324,15 +319,14 @@ todos.selectors.getVisibleTodos = createSelector(
       case SHOW_ACTIVE:
         return todos.filter(t => !t.completed);
       default:
-        throw new Error("Unknown filter: " + visibilityFilter);
+        throw new Error('Unknown filter: ' + visibilityFilter);
     }
   }
 );
 
 todos.selectors.getCompletedTodoCount = createSelector(
   [todos.selectors.getTodos],
-  todos =>
-    todos.reduce((count, todo) => (todo.completed ? count + 1 : count), 0)
+  todos => todos.reduce((count, todo) => (todo.completed ? count + 1 : count), 0)
 );
 ```
 
@@ -361,14 +355,14 @@ and `[thunk]` in production.
 
 ```jsx
 // store.js
-import { configureStore, getDefaultMiddleware } from "redux-starter-kit";
-import { combineReducers } from "redux";
-import { visibilityFilter, todos } from "./ducks";
+import { configureStore, getDefaultMiddleware } from 'redux-starter-kit';
+import { combineReducers } from 'redux';
+import { visibilityFilter, todos } from './ducks';
 
 const preloadedState = {
   todos: [
     {
-      text: "Use Redux",
+      text: 'Use Redux',
       completed: false,
       id: 0
     }
@@ -385,7 +379,7 @@ const middleware = [...getDefaultMiddleware()];
 export const store = configureStore({
   reducer,
   middleware,
-  devTools: process.env.NODE_ENV !== "production",
+  devTools: process.env.NODE_ENV !== 'production',
   preloadedState
 });
 ```
