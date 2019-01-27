@@ -37,6 +37,13 @@ export default ({ data, location, pageContext }) => {
         </header>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <footer>
+          <div className="tags">
+            {post.frontmatter.tags.map(tag => (
+              <div key={tag} className="tag">
+                {tag}
+              </div>
+            ))}
+          </div>
           <p>
             <a href={discussUrl} target="_blank" rel="noopener noreferrer">
               Discuss on Twitter
@@ -50,7 +57,7 @@ export default ({ data, location, pageContext }) => {
         <nav>
           <ul>
             {[[previous, 'prev'], [next, 'next']].map(([p, rel]) => (
-              <li>
+              <li key={rel}>
                 {p && (
                   <Link to={buildPath(p.frontmatter.date, p.fields.slug)} rel={rel}>
                     {rel === 'prev' && `← `}
@@ -84,6 +91,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         dateRaw: date
         spoiler
+        tags
       }
       fields {
         slug

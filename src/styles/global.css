@@ -160,10 +160,6 @@ a[href]:not(.anchor):not(.gatsby-resp-image-link) {
   color: inherit;
 }
 
-.anchor {
-  outline: none;
-}
-
 .anchor svg {
   fill: var(--text-header);
 }
@@ -264,15 +260,18 @@ nav ul {
   width: 24px;
   padding: 0.2rem;
   border-radius: 50%;
+}
+
+.darkLightMode .feather {
   opacity: 0.3;
 }
 
-.darkLightMode:hover {
+.darkLightMode:hover .feather {
   opacity: 1;
 }
 
 .darkLightMode:hover .feather-moon {
-  stroke: #4a53cd;
+  stroke: #9b4dca;
 }
 .darkLightMode:hover .feather-sun {
   stroke: rgba(250, 240, 20, 1);
@@ -280,6 +279,10 @@ nav ul {
 
 .darkLightMode.focus {
   background: var(--mark);
+}
+.darkLightMode.focus .feater {
+  color: var(--text);
+  opacity: 1;
 }
 
 .darkLightMode input[type='checkbox'] {
@@ -291,4 +294,17 @@ nav ul {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.tags {
+  display: flex;
+  margin: 1rem 0 2rem 0;
+}
+.tag {
+  background: var(--code-bg);
+  border-radius: 3px;
+  margin-right: 0.6rem;
+  padding: 0.1rem 0.9rem;
+  font-size: 0.8888rem;
+  height: 1.5rem;
 }

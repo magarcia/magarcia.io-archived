@@ -11,6 +11,7 @@
     "react/no-danger": "off",
     "jsx-a11y/html-has-lang": "off",
     "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
     "prettier/prettier": ["error"],
     "jsx-a11y/href-no-hash": [0],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]

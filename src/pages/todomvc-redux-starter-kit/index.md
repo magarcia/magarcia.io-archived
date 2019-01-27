@@ -5,8 +5,9 @@ date: '2019-01-26'
 spoiler: How to make redux related code more readable.
 draft: false
 tags:
-  - react
-  - redux
+  - React
+  - Redux
+  - JavaScript
 ---
 
 I've been working with [React](https://reactjs.org/) more than two years now. I

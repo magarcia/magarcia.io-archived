@@ -22,10 +22,7 @@ class DarkLightMode extends React.Component {
       event.preventDefault();
       //   checkbox.focus();
       checkbox.click();
-      return;
     }
-
-    this.setState({ checked: checkbox.checked });
   }
 
   handleBlur(event) {
@@ -37,12 +34,15 @@ class DarkLightMode extends React.Component {
   }
 
   render() {
+    const { theme, hasFocus } = this.state;
     return (
-      <div
+      <div // eslint-disable-line jsx-a11y/interactive-supports-focus
         onClick={this.handleClick.bind(this)}
-        className={`darkLightMode ${this.state.hasFocus && 'focus'}`}
+        onKeyPress={this.handleClick.bind(this)}
+        role="button"
+        className={`darkLightMode ${hasFocus ? 'focus' : ''}`}
       >
-        {this.state.theme === 'light' ? (
+        {theme === 'light' ? (
           <Moon height={24} width={24} title="Switch to Dark mode" />
         ) : (
           <Sun height={24} width={24} title="Switch to Light mode" />
@@ -52,7 +52,7 @@ class DarkLightMode extends React.Component {
             this.input = ref;
           }}
           type="checkbox"
-          checked={this.state.theme === 'dark'}
+          checked={theme === 'dark'}
           aria-label="Switch between Dark and Light mode"
           onChange={e => window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')}
           onFocus={this.handleFocus.bind(this)}
