@@ -14,12 +14,11 @@ const GITHUB_REPO_NAME = 'blog';
 export default ({ data, location, pageContext }) => {
   const post = data.markdownRemark;
   const siteTitle = get(data, 'site.siteMetadata.title');
-  const { previous, next, slug } = pageContext;
+  const { previous, next, slug, date } = pageContext;
+  const url = `https://magarcia.github.io${buildPath(date, slug)}`;
 
   const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages${slug}/index.md`;
-  const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `https://magarcia.github.io${slug}`
-  )}`;
+  const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(url)}`;
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -27,7 +26,7 @@ export default ({ data, location, pageContext }) => {
         description={post.frontmatter.spoiler}
         slug={post.fields.slug}
       />
-      <SocialShare title={post.frontmatter.title} url={`https://magarcia.github.io${slug}`} />
+      <SocialShare title={post.frontmatter.title} url={url} />
       <main>
         <header>
           <h1>{post.frontmatter.title}</h1>

@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import { buildPath, formatPostDate, formatReadingTime } from '../utils/helpers';
-import '../styles/index.css';
 
 const BlogIndex = ({ location, data }) => {
   const siteTitle = get(data, 'site.siteMetadata.title');
