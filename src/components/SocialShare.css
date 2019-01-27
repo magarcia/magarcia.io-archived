@@ -1,7 +1,7 @@
 .aside {
   position: fixed;
   top: 150px;
-  margin-left: -100px;
+  margin-left: -50px;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.3s, opacity 0.3s 0s;
@@ -13,11 +13,11 @@
 }
 .aside a {
   font-size: 17px;
-  color: rgba(0, 0, 0, 0.84);
+  color: var(--text);
   opacity: 0.65;
   display: block;
   position: relative;
-  background: rgba(0, 0, 0, 0);
+  background: var(--bg);
   text-decoration: none;
   cursor: pointer;
   user-select: none;
@@ -28,6 +28,10 @@
   background: transparent !important;
 }
 .aside a:hover {
+  opacity: 1;
+}
+.aside a:focus {
+  outline: none;
   opacity: 1;
 }
 .ssrAnimation {

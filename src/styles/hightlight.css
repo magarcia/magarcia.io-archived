@@ -1,6 +1,6 @@
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #333;
+  color: var(--code-text);
   background: none;
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   font-feature-settings: normal;
@@ -198,7 +198,7 @@ pre[data-line] {
   margin-bottom: 1.75rem;
   font-size: 16px;
   border-radius: 1px;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--code-bg);
   -webkit-overflow-scrolling: touch;
   overflow: auto;
 }

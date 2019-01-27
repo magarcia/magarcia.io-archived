@@ -8,13 +8,37 @@
   font-family: inherit;
 }
 
+body.light {
+  --bg: #fff;
+  --text: #111;
+  --text-header: #000;
+  --hr: #ddd;
+  --code-bg: rgba(0, 0, 0, 0.05);
+  --code-text: #333;
+  --selection: rgba(250, 240, 20, 0.3);
+  --mark: rgba(250, 240, 20, 1);
+  --info: hsla(200, 0%, 0%, 0.55);
+}
+
+body.dark {
+  --bg: #363636;
+  --text: #b0b0b0;
+  --text-header: #fff;
+  --hr: rgba(255, 255, 255, 0.5);
+  --code-bg: rgba(255, 255, 255, 0.05);
+  --code-text: rgba(255, 255, 255, 0.8);
+  --selection: rgba(250, 240, 20, 0.3);
+  --mark: rgba(250, 240, 20, 0.7);
+  --info: rgba(255, 255, 255, 0.5);
+}
+
 body {
-  background: #fff;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Inter UI', -system-ui, system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-
+  transition: background-color 0.8s ease;
   width: 100%;
   max-width: 45rem;
   margin: 0 auto;
@@ -44,7 +68,6 @@ ul,
 ol,
 pre,
 blockquote,
-hr,
 object {
   margin: 1rem 0;
 }
@@ -60,7 +83,9 @@ img {
 hr {
   height: 1px;
   border: none;
-  background-color: #ddd;
+  background-color: var(--hr);
+  width: 80%;
+  margin: 2rem auto;
 }
 
 strong,
@@ -80,7 +105,7 @@ h4,
 h5,
 h6 {
   font-weight: 500;
-  color: #010101;
+  color: var(--text-header);
   margin: 1.618rem 0 0.7rem 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -127,12 +152,20 @@ h6 {
 a[href]:not(.anchor):not(.gatsby-resp-image-link) {
   text-decoration: none;
   background-repeat: repeat-x;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.84) 100%, rgba(0, 0, 0, 0) 0);
+  background-image: linear-gradient(to right, var(--text) 100%, rgba(0, 0, 0, 0) 0);
   background-image: linear-gradient(to right, currentColor 100%, currentColor 0);
   background-size: 1px 1px;
   background-position: 0 1.05em;
   background-position: 0 calc(1em + 1px);
   color: inherit;
+}
+
+.anchor {
+  outline: none;
+}
+
+.anchor svg {
+  fill: var(--text-header);
 }
 
 /* anchors: headings */
@@ -145,19 +178,29 @@ h6 > a {
   background: transparent !important;
 }
 
+h1 a:focus:not(.anchor),
+h2 a:focus:not(.anchor),
+h3 a:focus:not(.anchor),
+h4 a:focus:not(.anchor) {
+  outline: none;
+  background: var(--selection) !important;
+}
+
+header h1 a:focus {
+  background: transparent !important;
+}
+
 mark,
 ::selection {
-  background: rgba(250, 240, 20, 0.3);
+  background: var(--selection);
   text-shadow: none;
   padding: 0 3px;
 }
 
 mark {
-  background: rgba(250, 240, 20, 1);
+  background: var(--mark);
 }
-.header,
-main,
-.footer {
+main {
   margin: 0 2rem;
 }
 
@@ -165,11 +208,12 @@ main,
 .header {
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  align-items: center;
   cursor: default;
+  margin: 2rem 2rem 5rem 2rem;
 }
 .header h1 {
-  background: rgb(250, 240, 20);
+  background: var(--mark);
   font-size: 3rem;
   padding: 0 1rem;
   height: 3.8rem;
@@ -183,14 +227,10 @@ main,
   margin: 0;
 }
 
-.header,
-.footer {
-  max-width: 50rem;
-  margin: 2rem;
-}
 .footer {
   display: flex;
   justify-content: space-between;
+  margin: 2rem;
 }
 .footer,
 nav {
@@ -205,9 +245,50 @@ nav ul {
   flex-wrap: wrap;
 }
 .info {
-  color: hsla(200, 0%, 0%, 0.55);
+  color: var(--info);
 }
 
 .post-list header h3 {
   margin-bottom: 0;
+}
+
+.feather {
+  stroke: var(--text-header);
+  transition: all 500ms ease-in;
+}
+
+.darkLightMode {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  height: 24px;
+  width: 24px;
+  padding: 0.2rem;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.darkLightMode:hover {
+  opacity: 1;
+}
+
+.darkLightMode:hover .feather-moon {
+  stroke: #4a53cd;
+}
+.darkLightMode:hover .feather-sun {
+  stroke: rgba(250, 240, 20, 1);
+}
+
+.darkLightMode.focus {
+  background: var(--mark);
+}
+
+.darkLightMode input[type='checkbox'] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Twitter from './icons/twitter';
+import Facebook from './icons/facebook';
+import LinkedIn from './icons/linkedin';
 import './SocialShare.css';
 
 const NETWORKS = [
@@ -7,18 +10,18 @@ const NETWORKS = [
     name: 'Twitter',
     urlBuilder: (title, url) =>
       `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=martinprins`,
-    logo: require('../assets/twitter.svg') // eslint-disable-line global-require
+    logo: <Twitter width={24} height={24} title="Share on Twitter" />
   },
   {
     name: 'Facebook',
     urlBuilder: (_, url) => `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-    logo: require('../assets/facebook.svg') // eslint-disable-line global-require
+    logo: <Facebook width={24} height={24} title="Share on Facebook" />
   },
   {
     name: 'LinkedIn',
     urlBuilder: (title, url) =>
       `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&source=https%3A//www.linkedin.com/in/martingarciamonterde/`,
-    logo: require('../assets/linkedin.svg') // eslint-disable-line global-require
+    logo: <LinkedIn width={24} height={24} title="Share on LinkedIn" />
   }
 ];
 export default class SocialShare extends Component {
@@ -64,7 +67,7 @@ export default class SocialShare extends Component {
             rel="noopener noreferrer"
             href={urlBuilder(title, url)}
           >
-            <img src={logo} width={24} height={24} alt={name} />
+            {logo}
           </a>
         ))}
       </aside>
