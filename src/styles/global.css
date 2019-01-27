@@ -27,8 +27,8 @@ body.dark {
   --hr: rgba(255, 255, 255, 0.5);
   --code-bg: rgba(255, 255, 255, 0.05);
   --code-text: rgba(255, 255, 255, 0.8);
-  --selection: rgba(250, 240, 20, 0.3);
-  --mark: rgba(250, 240, 20, 0.7);
+  --selection: rgba(155, 77, 202, 0.3);
+  --mark: rgba(155, 77, 202, 1);
   --info: rgba(255, 255, 255, 0.5);
 }
 
@@ -266,23 +266,18 @@ nav ul {
   opacity: 0.3;
 }
 
+.darkLightMode.focus .feather,
 .darkLightMode:hover .feather {
   opacity: 1;
 }
 
+.darkLightMode.focus .feather-moon,
 .darkLightMode:hover .feather-moon {
   stroke: #9b4dca;
 }
+.darkLightMode.focus .feather-sun,
 .darkLightMode:hover .feather-sun {
   stroke: rgba(250, 240, 20, 1);
-}
-
-.darkLightMode.focus {
-  background: var(--mark);
-}
-.darkLightMode.focus .feater {
-  color: var(--text);
-  opacity: 1;
 }
 
 .darkLightMode input[type='checkbox'] {
