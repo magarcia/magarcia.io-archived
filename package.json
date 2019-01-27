@@ -70,6 +70,7 @@
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "start": "npm run dev",
     "build": "rm -rf public/* && rm -rf .cache && gatsby build",
+    "predeploy": "npm run build",
     "deploy": "cd public && touch .nojekyll && git add . && git commit --no-verify -m 'Rebuild of the site' && git push origin master",
     "deploy:ci": "npm run build && bash ./deploy.sh",
     "dry": "npm build && cd public && npx static-server"
