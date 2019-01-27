@@ -15,7 +15,7 @@ body.light {
   --hr: #ddd;
   --code-bg: rgba(0, 0, 0, 0.05);
   --code-text: #333;
-  --selection: rgba(250, 240, 20, 0.3);
+  --selection: rgba(250, 240, 20, 0.5);
   --mark: rgba(250, 240, 20, 1);
   --info: hsla(200, 0%, 0%, 0.55);
 }
@@ -27,7 +27,7 @@ body.dark {
   --hr: rgba(255, 255, 255, 0.5);
   --code-bg: rgba(255, 255, 255, 0.05);
   --code-text: rgba(255, 255, 255, 0.8);
-  --selection: rgba(155, 77, 202, 0.3);
+  --selection: rgba(155, 77, 202, 0.5);
   --mark: rgba(155, 77, 202, 1);
   --info: rgba(255, 255, 255, 0.5);
 }

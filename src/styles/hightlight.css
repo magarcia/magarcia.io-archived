@@ -196,11 +196,15 @@ pre[data-line] {
 
 .gatsby-highlight {
   margin-bottom: 1.75rem;
-  font-size: 16px;
-  border-radius: 1px;
+  font-size: 14px;
+  border-radius: 3px;
   background: var(--code-bg);
   -webkit-overflow-scrolling: touch;
   overflow: auto;
+}
+.gatsby-highlight::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 .gatsby-highlight pre[class*='language-'] {
