@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <header
+    className="header"
+  >
+    <h1>
+      <a
+        href="/"
+      />
+    </h1>
+  </header>,
+  <img
+    alt="Lost"
+    src="test-file-stub"
+    style={
+      Object {
+        "position": "absolute",
+        "width": "45rem",
+      }
+    }
+  />,
+  <h1
+    style={
+      Object {
+        "fontSize": "23rem",
+      }
+    }
+  >
+    404
+  </h1>,
+]
+`;

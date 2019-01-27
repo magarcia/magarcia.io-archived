@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<footer
+  className="footer"
+>
+  <div>
+    <a
+      href="https://mobile.twitter.com/martinprins"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      twitter
+    </a>
+     
+    ‐
+     
+    <a
+      href="https://github.com/magarcia"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      github
+    </a>
+     
+  </div>
+  <div>
+    <a
+      href="/rss.xml"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      rss
+    </a>
+  </div>
+</footer>
+`;

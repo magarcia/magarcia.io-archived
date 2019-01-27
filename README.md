@@ -1,12 +1,11 @@
-# Personal blog [![Travis][build-badge]][build-status] [![Coverage][coverage-badge]][coverage-status] [![CodeClimate][codeclimate-badge]][codeclimate-status] [![Requirements][requirements-badge]][requirements-status]
+# [overreacted.io](https://overreacted.io/)
 
-<!-- Definitions -->
+My personal blog. Forked from [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog). Syntax theme based on [Sarah Drasner's Night Owl](https://github.com/sdras/night-owl-vscode-theme/) with small tweaks.
 
-[build-badge]: https://img.shields.io/travis/magarcia/blog/master.svg
-[build-status]: https://travis-ci.org/magarcia/blog
-[coverage-badge]: https://api.codeclimate.com/v1/badges/39f857d5f9d48d9e6e51/test_coverage
-[coverage-status]: https://codeclimate.com/github/magarcia/blog/test_coverage
-[codeclimate-badge]: https://api.codeclimate.com/v1/badges/39f857d5f9d48d9e6e51/maintainability
-[codeclimate-status]: https://codeclimate.com/github/magarcia/blog/maintainability
-[requirements-badge]: https://badges.greenkeeper.io/magarcia/blog.svg
-[requirements-status]: https://greenkeeper.io/
+To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
+
+## Contributing Translations
+
+You can translate any article on the website into your language!
+
+Add a Markdown file with the translation to the corresponding article folder. For example `index.fr.md` in `src/pages/optimized-for-change/`. If you're the first one to translate a post to your language, you'll need to add it to to the list in `src/utils/i18n.js`. See [this PR](https://github.com/gaearon/overreacted.io/pull/159) for an example. **Please don't send translations for the Russian language — I will be translating into it myself when I find time.**

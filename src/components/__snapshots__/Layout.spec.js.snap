@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly non root path 1`] = `
+Array [
+  <header
+    className="header"
+  >
+    <h3>
+      <a
+        href="/"
+      >
+        title
+      </a>
+    </h3>
+  </header>,
+  <div>
+    content
+  </div>,
+]
+`;
+
+exports[`renders correctly root path 1`] = `
+Array [
+  <header
+    className="header"
+  >
+    <h1>
+      <a
+        href="/"
+      >
+        title
+      </a>
+    </h1>
+  </header>,
+  <div>
+    content
+  </div>,
+]
+`;

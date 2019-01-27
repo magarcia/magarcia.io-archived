@@ -1,1 +1,2 @@
-_posts/*
+src/assets/.*.svg
+src/pages/.*/.*.md

@@ -1,9 +1,0 @@
-.list {
-  padding-inline-start: 0px;
-  list-style: none;
-}
-@media all and (min-width: 768px) {
-  .list {
-    padding-inline-start: 40px;
-  }
-}
