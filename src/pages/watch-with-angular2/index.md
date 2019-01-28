@@ -1,13 +1,13 @@
 ---
 title: $watch with Angular 2
-date: "2016-07-04"
+date: '2016-07-04'
 spoiler:
 tags:
   - GSoC
   - Jangouts
 ---
 
-In my [previous post](/2016/07/03/events-in-angular2), I was talking about how
+In my [previous post](/2016/07/03/events-in-angular2/), I was talking about how
 to implement events from Angular 1 in Angular 2. But in the snippet of code that
 I use as an example we can find another thing that not exists in Angular 2:
 `$watch`.
@@ -47,17 +47,17 @@ So we can bind the input for a component to a function that does the same as the
 `$watch` function.
 
 ```typescript
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "example-component"
+  selector: 'example-component'
 })
 export class ExampleComponent {
   public internalVal = null;
 
   constructor() {}
 
-  @Input("externalVal")
+  @Input('externalVal')
   set updateInternalVal(externalVal) {
     this.internalVal = externalVal;
   }
