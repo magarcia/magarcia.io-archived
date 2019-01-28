@@ -24,7 +24,7 @@ export default ({ data, location, pageContext }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.spoiler}
-        slug={post.fields.slug}
+        slug={buildPath(date, slug)}
       />
       <SocialShare title={post.frontmatter.title} url={url} />
       <main>

@@ -88,7 +88,9 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
                   : []
               )
               .concat(meta)}
-          />
+          >
+            <link rel="canonical" href={url} />
+          </Helmet>
         );
       }}
     />
