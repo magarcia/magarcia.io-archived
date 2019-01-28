@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Events in Angular2
-date: "2016-07-03"
-spoiler:
+date: '2016-07-03'
+spoiler: About how to migrate events from AngularJS to Angular2.
 tags:
   - GSoC
   - Jangouts
@@ -18,29 +18,25 @@ if (!feed.isLocalScreen) {
   // will not be displayed again
   var mutedWarningTimeout = now();
 
-  scope.$on("muted.byRequest", function() {
+  scope.$on('muted.byRequest', function() {
     mutedWarningTimeout = secondsFromNow(3);
     MuteNotifier.muted();
   });
 
-  scope.$on("muted.byUser", function() {
+  scope.$on('muted.byUser', function() {
     // Reset the warning timeout
     mutedWarningTimeout = now();
   });
 
-  scope.$on("muted.Join", function() {
+  scope.$on('muted.Join', function() {
     mutedWarningTimeout = now();
     MuteNotifier.joinedMuted();
   });
 
-  scope.$watch("vm.feed.isVoiceDetected()", function(newVal) {
+  scope.$watch('vm.feed.isVoiceDetected()', function(newVal) {
     // Display warning only if muted (check for false, undefined means
     // still connecting) and the timeout has been reached
-    if (
-      newVal &&
-      feed.getAudioEnabled() === false &&
-      now() > mutedWarningTimeout
-    ) {
+    if (newVal && feed.getAudioEnabled() === false && now() > mutedWarningTimeout) {
       MuteNotifier.speaking();
       mutedWarningTimeout = secondsFromNow(60);
     }
@@ -66,10 +62,10 @@ Basically, the idea is to make a service that implements the `$broadcast` and
 importants in Angular 2, and for this case, we use a [Subject](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/subjects.md).
 
 ```typescript
-import { Subject } from "rxjs/Subject";
-import { Observable } from "rxjs/Observable";
-import "rxjs/add/operator/filter";
-import "rxjs/add/operator/map";
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
 
 interface BroadcastEvent {
   key: any;
