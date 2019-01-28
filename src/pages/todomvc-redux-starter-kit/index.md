@@ -2,7 +2,7 @@
 layout: post
 title: Refactor TodoMVC with Redux Starter Kit
 date: '2019-01-26'
-spoiler: How to make redux related code more readable.
+spoiler: Redux Starter Kit a toolset to make clean and readable code when working with Redux.
 draft: false
 tags:
   - React

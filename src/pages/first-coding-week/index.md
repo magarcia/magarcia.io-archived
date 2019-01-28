@@ -1,15 +1,15 @@
 ---
 title: First coding week
-date: "2016-05-29"
-spoiler:
+date: '2016-05-29'
+spoiler: The first week working on the migration of Jangouts to Angular2.
 tags:
   - GSoC
   - Jangouts
 ---
 
-The first week of the coding period at GSoC 2016, so I started the upgrading process of
-Jangouts from Angular 1.x to Angular 2. This week, the tasks have been
-fulfilled within the deadline, I hope to remain so for the next week.
+The first week of the coding period at GSoC 2016, so I started the upgrading
+process of Jangouts from Angular 1.x to Angular 2. This week, the tasks have
+been fulfilled within the deadline, I hope to remain so for the next week.
 
 I'm following the [upgrade guide](https://angular.io/docs/ts/latest/guide/upgrade.html)
 from official Angular docs, which has two main blocks:
@@ -65,7 +65,7 @@ Another error we can find when working with HTML elements is:
 This error is produced from a code like that:
 
 ```javascript
-var video = $("video", element)[0];
+var video = $('video', element)[0];
 video.muted = true;
 ```
 

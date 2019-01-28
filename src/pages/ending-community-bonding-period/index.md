@@ -1,7 +1,7 @@
 ---
 title: Ending Community Bonding Period
-date: "2016-05-22"
-spoiler:
+date: '2016-05-22'
+spoiler: The period of coding for the Google Summer of Code is going to start.
 tags:
   - GSoC
   - Jangouts

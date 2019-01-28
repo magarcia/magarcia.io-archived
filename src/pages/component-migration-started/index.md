@@ -1,7 +1,7 @@
 ---
 title: Components migration started
-date: "2016-06-05"
-spoiler:
+date: '2016-06-05'
+spoiler: Start the migration of components from AngularJS to Angular2 in Jangouts.
 tags:
   - GSoC
   - Jangouts

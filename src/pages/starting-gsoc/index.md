@@ -1,7 +1,7 @@
 ---
 title: First Weeks at GSoC 2016
-date: "2016-05-07"
-spoiler:
+date: '2016-05-07'
+spoiler: Joining Google Summer of Code Program to work on the migration of an application to Angular2.
 tags:
   - GSoC
   - Jangouts

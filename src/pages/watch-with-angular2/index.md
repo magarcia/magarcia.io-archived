@@ -1,7 +1,7 @@
 ---
 title: $watch with Angular 2
 date: '2016-07-04'
-spoiler:
+spoiler: How to migrate the $watch feature from AngularJS to Angular2
 tags:
   - GSoC
   - Jangouts
