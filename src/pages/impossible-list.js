@@ -1,19 +1,22 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 
 const groupBy = (xs, key) =>
-  xs.reduce(function(rv, x) {
+  xs.reduce((rv, x) => {
     (rv[x[key]] = rv[x[key]] || []).push(x);
     return rv;
   }, {});
 
 const ImpossibleList = ({ location, data }) => {
   const siteTitle = get(data, 'site.siteMetadata.title');
-  const impossibles = groupBy(get(data, 'allImpossiblesJson.edges').map(e => e.node), 'type');
+  const impossiblesGrouped = groupBy(
+    get(data, 'allImpossiblesJson.edges').map(e => e.node),
+    'type'
+  );
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -66,18 +69,16 @@ const ImpossibleList = ({ location, data }) => {
           </p>
           <p>–&nbsp;Joel Runyon</p>
         </blockquote>
-        {Object.entries(impossibles).map(([type, impossibles]) => {
-          return (
-            <section>
-              <h2>{type}</h2>
-              <ul>
-                {impossibles.map(({ id, title, done }) => {
-                  return <li key={id}>{done ? <del>{title}</del> : title}</li>;
-                })}
-              </ul>
-            </section>
-          );
-        })}
+        {Object.entries(impossiblesGrouped).map(([type, impossibles]) => (
+          <section key={type}>
+            <h2>{type}</h2>
+            <ul>
+              {impossibles.map(({ id, title, done }) => (
+                <li key={id}>{done ? <del>{title}</del> : title}</li>
+              ))}
+            </ul>
+          </section>
+        ))}
       </main>
       <Footer />
     </Layout>
