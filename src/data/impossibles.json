@@ -1,0 +1,362 @@
+[
+  {
+    "title": "Run a 5K in less than 25 minutes",
+    "type": "Fitness/Health",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Run a 10K",
+    "type": "Fitness/Health",
+    "done": true,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Run a half Marathon",
+    "type": "Fitness/Health",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Complete a Sprint Spartan Race",
+    "type": "Fitness/Health",
+    "done": true,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Complete a Super Spartan Race",
+    "type": "Fitness/Health",
+    "done": true,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Complete a Trifecta",
+    "type": "Fitness/Health",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Do 5 Rx Wods in a row",
+    "type": "Fitness/Health",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Do Planche Pushups",
+    "type": "Fitness/Health",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Reach Financial Independence and Retire Early",
+    "type": "Professional",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Speak in a local conference",
+    "type": "Professional",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Speak in a country level conference",
+    "type": "Professional",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Speak in an international conference",
+    "type": "Professional",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Create an online course",
+    "type": "Professional",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Get 100,000 blog visits, all time",
+    "type": "Professional",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Do a morning yoga workout 100 days in a row",
+    "type": "Habit",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Read 25 pages a day for three months in a row",
+    "type": "Habit",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Learn how to play the piano",
+    "type": "Creative",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Learn how to play the harmonica",
+    "type": "Creative",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Learn to draw",
+    "type": "Creative",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Learn card throwing",
+    "type": "Skill",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Learn swing dance",
+    "type": "Skill",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Learn knife throwing",
+    "type": "Skill",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Become a competent surfer",
+    "type": "Skill",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Go scuba diving in the Caribean",
+    "type": "Fun and/or “Insane”",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Climb Kilimanjaro",
+    "type": "Fun and/or “Insane”",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Climb Everest",
+    "type": "Fun and/or “Insane”",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Surf on Bali",
+    "type": "Fun and/or “Insane”",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Burning man",
+    "type": "Events to Attend",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "ComicCon",
+    "type": "Events to Attend",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Rio Carnival",
+    "type": "Events to Attend",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "3 months Van surf trip",
+    "type": "Travel",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Travel to New Zealand",
+    "type": "Travel",
+    "done": true,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Visit Cuba",
+    "type": "Travel",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Visit Japan",
+    "type": "Travel",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Visit every Continent",
+    "type": "Travel",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Visit Iceland",
+    "type": "Travel",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Learn French",
+    "type": "Languages",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Learn German",
+    "type": "Languages",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Have a “Kliver” tattoo",
+    "type": "Miscellanea",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  },
+  {
+    "title": "Have a second tattoo",
+    "type": "Miscellanea",
+    "done": false,
+    "date": null,
+    "proof": null,
+    "link": null,
+    "focus": false
+  }
+]
