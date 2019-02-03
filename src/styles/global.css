@@ -200,6 +200,20 @@ main {
   margin: 0 2rem;
 }
 
+blockquote {
+  border-left: 3px solid var(--text);
+  padding: 0.2rem 2rem;
+  font-style: italic;
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+ul li del {
+  opacity: 0.5;
+}
+
 /* header */
 .header {
   display: flex;
