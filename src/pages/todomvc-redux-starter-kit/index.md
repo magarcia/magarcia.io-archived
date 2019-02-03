@@ -226,7 +226,7 @@ All the changes did until now are in [this commit](https://github.com/magarcia/t
 
 The todos reducer is more complex so I'm not going to show the refactor step by
 step. Instead, I'm going to explain how the final result looks like, but if you
-are interested in see directly the final result is [here](https://github.com/magarcia/todomvc-redux-starter-kit/blob/ba531a2ea7c2c5ee8148e2a1ab491e7e0a31e819/src/ducks/todos.js).
+are interested [go directly the final result](https://github.com/magarcia/todomvc-redux-starter-kit/blob/ba531a2ea7c2c5ee8148e2a1ab491e7e0a31e819/src/ducks/todos.js).
 
 The first part is defining the initial state:
 
