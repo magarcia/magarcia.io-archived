@@ -17,7 +17,7 @@ const ImpossibleList = ({ location, data }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO />
+      <SEO title="My Impossible List" />
       <main className="post-list">
         <h1>My Impossible List</h1>
 
