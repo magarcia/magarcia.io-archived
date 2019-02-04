@@ -8,7 +8,7 @@
     "url": "https://github.com/magarcia/magarcia.io/issues"
   },
   "dependencies": {
-    "gatsby": "^2.0.76",
+    "gatsby": "^2.0.112",
     "gatsby-plugin-feed": "^2.0.13",
     "gatsby-plugin-google-analytics": "^2.0.13",
     "gatsby-plugin-i18n": "^0.4.2",
