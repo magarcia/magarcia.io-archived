@@ -49,12 +49,20 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
                 content: url
               },
               {
+                property: 'og:site_name',
+                content: siteMetadata.title
+              },
+              {
                 property: 'og:title',
                 content: title || siteMetadata.title
               },
               {
-                name: 'og:description',
+                property: 'og:description',
                 content: metaDescription
+              },
+              {
+                property: 'og:locale',
+                content: 'en_GB'
               },
               {
                 name: 'twitter:card',
