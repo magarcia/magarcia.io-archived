@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/magarcia
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://magarcia.io
+  * I am magarcia (https://keybase.io/magarcia) on keybase.
+  * I have a public key ASCKNrgMjGr88gDDkII6ZA9NwAfEkkGuDLHtp4TdDis9XQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120ddbc103ad30f9caff6fb97b50cce12fff0f1b0530a4bf3f23f9689de403a9e0e0a",
+      "host": "keybase.io",
+      "kid": "01208a36b80c8c6afcf200c390823a640f4dc007c49241ae0cb1eda784dd0e2b3d5d0a",
+      "uid": "0777e219d4adf7be9a240ac0344a3519",
+      "username": "magarcia"
+    },
+    "merkle_root": {
+      "ctime": 1551032795,
+      "hash": "8d4e2986a451aae342347ef2ab8e8fb2b2ee7f0fcd00811d1282d67b7c9c31d5620b082b23afba34912e2bfceb0741bf646b7f329c3440f9f53b8ab3eee29ec2",
+      "hash_meta": "8257f520d10c6752306cff09d33f89331e87b7a35b8bf7aa2c5d2dd68be700a4",
+      "seqno": 4821461
+    },
+    "service": {
+      "entropy": "37Th4yAx8leHfjipoiTnJP2i",
+      "hostname": "magarcia.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.0.0"
+  },
+  "ctime": 1551032840,
+  "expire_in": 504576000,
+  "prev": "88290d4d629380a39f421c4f03b47fa5396ec4f2aabcb73207891d5540cc7a47",
+  "seqno": 36,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgija4DIxq/PIAw5CCOmQPTcAHxJJBrgyx7aeE3Q4rPV0Kp3BheWxvYWTESpcCJMQgiCkNTWKTgKOfQhxPA7R/pTluxPKqvLcyB4kdVUDMekfEILjj9ZXQP3AFqJDmfhwbpowbEAzoPS8osOl2JEQHgnurAgHCo3NpZ8RAQRFfN4z34NT/P/pBvoT3HnH8YmqEc+wSfctylUPNAOeIokKy8ig5zse80yk8lqXmA4Jxd+NeUPBjYN2PyJW6DahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEINvwM9LyXTiuKQ+Y07TG861P7M7PhRZv9R21aFelsL6to3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/magarcia
+
+==================================================================

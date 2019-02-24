@@ -65,6 +65,7 @@ module.exports = {
         respectDNT: true // respect "Do Not Track"
       }
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
