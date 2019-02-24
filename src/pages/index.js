@@ -20,9 +20,9 @@ const BlogIndex = ({ location, data }) => {
           return (
             <article key={node.fields.slug}>
               <header>
-                <h3>
+                <h2>
                   <Link to={buildPath(node.frontmatter.dateRaw, node.fields.slug)}>{title}</Link>
-                </h3>
+                </h2>
                 <small className="info">
                   <time dateTime={node.frontmatter.dateRaw}>
                     {formatPostDate(node.frontmatter.date)}

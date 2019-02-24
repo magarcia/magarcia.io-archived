@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'magarcia',
     author: 'Martin Garcia',
-    description: 'Personal blog by Martin Garcia.',
+    description: 'A personal blog by Martin Garcia. Thoughts, words, and experiments about code.',
     siteUrl: 'https://magarcia.io',
     social: {
       twitter: '@martinprins'
