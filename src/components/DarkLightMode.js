@@ -42,11 +42,7 @@ class DarkLightMode extends React.Component {
         role="button"
         className={`darkLightMode ${hasFocus ? 'focus' : ''}`}
       >
-        {theme === 'light' ? (
-          <Moon height={24} width={24} title="Switch to Dark mode" />
-        ) : (
-          <Sun height={24} width={24} title="Switch to Light mode" />
-        )}
+        {theme === 'light' ? <Moon height={24} width={24} /> : <Sun height={24} width={24} />}
         <input
           ref={ref => {
             this.input = ref;

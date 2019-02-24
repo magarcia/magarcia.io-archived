@@ -73,6 +73,10 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
                 content: siteMetadata.social.twitter
               },
               {
+                name: 'twitter:site',
+                content: siteMetadata.social.twitter
+              },
+              {
                 name: 'twitter:title',
                 content: title || siteMetadata.title
               },
