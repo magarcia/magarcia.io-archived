@@ -30,6 +30,7 @@ const ImpossibleList = ({ location, data }) => {
             href="http://collegeinfogeek.com/about/meet-the-author/my-impossible-list/"
             target="_blank"
             rel="noopener noreferrer"
+            title="Thomas Frank Impossible List"
           >
             Thomas Frank{' '}
           </a>
@@ -38,6 +39,7 @@ const ImpossibleList = ({ location, data }) => {
             href="http://impossiblehq.com/impossible-list/"
             target="_blank"
             rel="noopener noreferrer"
+            title="world’s first impossible list"
           >
             world’s first impossible list
           </a>{' '}
@@ -46,6 +48,7 @@ const ImpossibleList = ({ location, data }) => {
             href="http://impossiblehq.com/the-impossible-list-is-not-a-bucket-list/"
             target="_blank"
             rel="noopener noreferrer"
+            title="Difference between the impossible list and a bucket list"
           >
             difference
           </a>{' '}
