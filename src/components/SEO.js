@@ -27,7 +27,9 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
       render={data => {
         const { siteMetadata } = data.site;
         const metaDescription = description || siteMetadata.description;
-        const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : null;
+        const metaImage = image
+          ? `${siteMetadata.siteUrl}/${image}`
+          : `${siteMetadata.siteUrl}/${profilePic}`;
         const url = `${siteMetadata.siteUrl}${slug}`;
         return (
           <Helmet
@@ -67,7 +69,7 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
               },
               {
                 property: 'og:image',
-                content: profilePic
+                content: metaImage
               },
               {
                 property: 'og:locale',
@@ -91,28 +93,13 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
               },
               {
                 name: 'twitter:image',
-                content: profilePic
+                content: metaImage
               },
               {
                 name: 'twitter:description',
                 content: metaDescription
               }
-            ]
-              .concat(
-                metaImage
-                  ? [
-                      {
-                        property: 'og:image',
-                        content: metaImage
-                      },
-                      {
-                        name: 'twitter:image',
-                        content: metaImage
-                      }
-                    ]
-                  : []
-              )
-              .concat(meta)}
+            ].concat(meta)}
           >
             <link rel="canonical" href={url} />
           </Helmet>
