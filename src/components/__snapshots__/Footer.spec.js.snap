@@ -9,6 +9,7 @@ exports[`renders correctly 1`] = `
       href="https://mobile.twitter.com/martinprins"
       rel="noopener noreferrer"
       target="_blank"
+      title="twitter"
     >
       twitter
     </a>
@@ -19,16 +20,28 @@ exports[`renders correctly 1`] = `
       href="https://github.com/magarcia"
       rel="noopener noreferrer"
       target="_blank"
+      title="github"
     >
       github
     </a>
      
+    ‐
+     
+    <a
+      href="https://stackoverflow.com/users/458193/martin-prins"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="stackoverflow"
+    >
+      stack overflow
+    </a>
   </div>
   <div>
     <a
       href="/rss.xml"
       rel="noopener noreferrer"
       target="_blank"
+      title="rss"
     >
       rss
     </a>

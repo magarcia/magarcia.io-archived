@@ -60,7 +60,7 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
             {
               '@context': 'http://schema.org',
               '@type': 'BlogPosting',
-              url: url,
+              url,
               name: title,
               alternateName: siteMetadata.title || '',
               headline: title,
