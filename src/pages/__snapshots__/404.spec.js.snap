@@ -25,9 +25,7 @@ Array [
         width={24}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <title>
-          Switch to Light mode
-        </title>
+        <title />
         <g
           fill="none"
           strokeLinecap="round"
