@@ -1,7 +1,7 @@
 ---
 title: BLoC Pattern with React Hooks
 date: '2019-02-18'
-spoiler: This is about how extract the business logic from the components in a React application using the BLoC pattern from Flutter in React making use of the new hooks API and the RxJS library.
+spoiler: This is about how to extract the business logic from the components in a React application using the BLoC pattern from Flutter with the new hooks API and RxJS.
 tags:
   - React
   - BLoC
