@@ -10,17 +10,17 @@ tags:
 
 The **BLoC Pattern** has been designed by _Paolo Soares_ and _Cong Hui_, from
 Google and first presented during the _DartConf 2018_ (January 23-24, 2018).
-[See the video on YouTube](https://www.youtube.com/watch?v=PLHln7wHgPE) .
+[See the video on YouTube](https://www.youtube.com/watch?v=PLHln7wHgPE 'BLoC Pattern Flutter') .
 
 BLoC stands for **B**usiness **Lo**gic **C**omponent. Initially was conceived to
 allow to reuse the same code between Flutter and Angular Dart, but in fact is
 independently of the platform: web application, mobile application, back-end.
 
 It can be considered an alternative to the
-[Redux port for flutter](https://pub.dartlang.org/packages/flutter_redux) making
+[Redux port for flutter](https://pub.dartlang.org/packages/flutter_redux 'Redux port for flutter') making
 use of Dart streams. In our case we’re going to use Observables from the library
-[RxJS](https://rxjs.dev/) , but any other option like
-[xstream](http://staltz.github.io/xstream/) will be valid as well.
+[RxJS](https://rxjs.dev/ 'RxJS') , but any other option like
+[xstream](http://staltz.github.io/xstream/ 'xstream') will be valid as well.
 
 In short the BLoC will:
 
