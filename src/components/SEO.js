@@ -29,8 +29,49 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
         const metaDescription = description || siteMetadata.description;
         const metaImage = image
           ? `${siteMetadata.siteUrl}/${image}`
-          : `${siteMetadata.siteUrl}/${profilePic}`;
+          : `${siteMetadata.siteUrl}${profilePic}`;
         const url = `${siteMetadata.siteUrl}${slug}`;
+        const schemaOrgJSONLD = [
+          {
+            '@context': 'http://schema.org',
+            '@type': 'WebSite',
+            url: siteMetadata.siteUrl,
+            name: title,
+            alternateName: siteMetadata.title || ''
+          }
+        ];
+        if (title) {
+          schemaOrgJSONLD.push(
+            {
+              '@context': 'http://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  item: {
+                    '@id': url,
+                    name: title,
+                    image
+                  }
+                }
+              ]
+            },
+            {
+              '@context': 'http://schema.org',
+              '@type': 'BlogPosting',
+              url: url,
+              name: title,
+              alternateName: siteMetadata.title || '',
+              headline: title,
+              image: {
+                '@type': 'ImageObject',
+                url: metaImage
+              },
+              description: metaDescription
+            }
+          );
+        }
         return (
           <Helmet
             htmlAttributes={{ lang }}
@@ -102,6 +143,8 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
             ].concat(meta)}
           >
             <link rel="canonical" href={url} />
+            {/* Schema.org tags */}
+            <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
           </Helmet>
         );
       }}
