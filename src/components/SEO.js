@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import profilePic from '../assets/profile-pic.jpg';
 
 const query = graphql`
   query GetSiteMetadata {
@@ -57,8 +58,16 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
                 content: title || siteMetadata.title
               },
               {
+                property: 'og:type',
+                content: title ? 'article' : 'blog'
+              },
+              {
                 property: 'og:description',
                 content: metaDescription
+              },
+              {
+                property: 'og:image',
+                content: profilePic
               },
               {
                 property: 'og:locale',
@@ -79,6 +88,10 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
               {
                 name: 'twitter:title',
                 content: title || siteMetadata.title
+              },
+              {
+                name: 'twitter:image',
+                content: profilePic
               },
               {
                 name: 'twitter:description',
