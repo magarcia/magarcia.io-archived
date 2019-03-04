@@ -143,6 +143,7 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
             ].concat(meta)}
           >
             <link rel="canonical" href={url} />
+            <link rel="home" href={siteMetadata.siteUrl} />
             {/* Schema.org tags */}
             <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
           </Helmet>
