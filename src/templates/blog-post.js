@@ -37,12 +37,21 @@ export default ({ data, location, pageContext }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <SocialShare title={post.frontmatter.title} url={url} />
         <footer>
-          <div className="tags">
-            {post.frontmatter.tags.map(tag => (
-              <div key={tag} className="tag">
-                {tag}
-              </div>
-            ))}
+          <div style={{ display: 'inline-block' }}>
+            <div className="tags">
+              {post.frontmatter.tags.map(tag => (
+                <div key={tag} className="tag">
+                  <Link
+                    to={`/tags/${tag
+                      .toLowerCase()
+                      .split(' ')
+                      .join('-')}`}
+                  >
+                    {tag}
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
           <p>
             <a

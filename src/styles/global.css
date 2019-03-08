@@ -323,3 +323,7 @@ nav ul {
   vertical-align: bottom;
   line-height: 1.5rem;
 }
+
+.tag:not(.token) a:not(.anchor):not(.gatsby-resp-image-link) {
+  background: none;
+}
