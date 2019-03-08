@@ -14,6 +14,7 @@ body.light {
   --text-header: #000;
   --hr: #ddd;
   --code-bg: rgba(0, 0, 0, 0.05);
+  --code-block-bg: #282c34;
   --code-text: #333;
   --selection: rgba(250, 240, 20, 0.5);
   --mark: rgba(250, 240, 20, 1);
@@ -26,6 +27,7 @@ body.dark {
   --text-header: #fff;
   --hr: rgba(255, 255, 255, 0.5);
   --code-bg: rgba(255, 255, 255, 0.05);
+  --code-block-bg: rgba(0, 0, 0, 0.5);
   --code-text: rgba(255, 255, 255, 0.8);
   --selection: rgba(155, 77, 202, 0.5);
   --mark: rgba(155, 77, 202, 1);
@@ -155,9 +157,10 @@ a[href]:not(.anchor):not(.gatsby-resp-image-link) {
   background-image: linear-gradient(to right, var(--text) 100%, rgba(0, 0, 0, 0) 0);
   background-image: linear-gradient(to right, currentColor 100%, currentColor 0);
   background-size: 1px 1px;
-  background-position: 0 1.05em;
-  background-position: 0 calc(1em + 1px);
+  background-position: 0 1.05rem;
+  background-position: 0 calc(1rem + 3px);
   color: inherit;
+  display: inline-block;
 }
 
 .anchor svg {
@@ -264,6 +267,7 @@ nav ul {
 
 .feather {
   stroke: var(--text-header);
+  fill: var(--text-header);
   transition: all 500ms ease-in;
 }
 
@@ -309,11 +313,13 @@ nav ul {
   display: flex;
   margin: 1rem 0 2rem 0;
 }
-.tag {
+.tag:not(.token) {
   background: var(--code-bg);
   border-radius: 3px;
   margin-right: 0.6rem;
   padding: 0.1rem 0.9rem;
   font-size: 0.8888rem;
   height: 1.5rem;
+  vertical-align: bottom;
+  line-height: 1.5rem;
 }

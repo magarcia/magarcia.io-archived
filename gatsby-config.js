@@ -34,7 +34,8 @@ module.exports = {
             options: {
               maxWidth: 800,
               withWebp: true,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
+              tracedSVG: true
             }
           },
           {
@@ -50,6 +51,19 @@ module.exports = {
               inlineCodeMarker: '÷'
             }
           },
+          // {
+          //   resolve: `gatsby-transformer-remark`,
+          //   options: {
+          //     plugins: [
+          //       {
+          //         resolve: `gatsby-remark-codemirror`,
+          //         options: {
+          //           theme: 'one-dark'
+          //         }
+          //       }
+          //     ]
+          //   }
+          // },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants'
         ]

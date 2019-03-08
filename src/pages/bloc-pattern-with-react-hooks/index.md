@@ -34,7 +34,7 @@ In short the BLoC will:
 I’m not going to explain extensively how BLoC works (there is other people that
 did a better job I will do here), but just some basic hints.
 
-![BLoC Schema](bloc-schema.png)
+![BLoC Schema](./bloc-schema.png)
 
 The BLoC will hold the business logic and components will have no knowledge
 about whats happening inside. Components will send _events_to the BLoC via
@@ -51,9 +51,15 @@ export class SearchBloc {
   private _query$ = new BehaviorSubject<string>('');
 
   constructor(private api: API) {
-    this._results$ = this._query$.pipe(switchMap(query => observableFrom(this.api.search(query))));
+    this._results$ = this._query$.pipe(
+      switchMap(query => {
+        return observableFrom(this.api.search(query));
+      })
+    );
     this._preamble$ = this.results$.pipe(
-      withLatestFrom(this._query$, (_, q) => (q ? `Results for ${q}` : 'All results'))
+      withLatestFrom(this._query$, (_, q) => {
+        return q ? `Results for ${q}` : 'All results';
+      })
     );
   }
 
@@ -88,19 +94,21 @@ declares `_results$` and `_preamble$` to respond to `_query$`.
 In order to use it on React we need to create a new instance of the BLoC and
 share it to the child components using a React context.
 
-```javascript
+```jsx
 const searchBloc = new SearchBloc(new API());
 const SearchContext = React.createContext(bloc);
 ```
 
 We have to expose it using the context provider:
 
-```javascript
+```jsx
 const App = () => {
   const searchBloc = useContext(SearchContext);
+
   useEffect(() => {
     return searchBloc.dispose;
-  }, []);
+  }, [searchBloc]);
+
   return (
     <SearchContext.Provider>
       <SearchInput />
@@ -115,10 +123,11 @@ so it will complete the observer when the component is unmount.
 
 Then we can publish changes to the BLoC from the `SearchInput` component:
 
-```javascript
+```jsx
 const SearchInput = () => {
    const searchBloc = useContext(SearchContext);
    const [query, setQuery] = useState("");
+
    useEffect(() => {
       searchBloc.query.next(query);
    }, [query]);
@@ -137,19 +146,20 @@ the query change we publish the new value to the BLoC.
 
 Now it’s time to the `ResultList`:
 
-```javascript
+```jsx
 const ResultList = () => {
   const searchBloc = useContext(SearchContext);
   const [results, setResults] = useState([]);
+
   useEffect(() => {
     return searchBloc.results$.subscribe(setResults);
-  }, []);
+  }, [searchBloc]);
 
   return (
     <div>
-      {results.map(({ id, name }) => {
-        return <div key={id}>{name}</div>;
-      })}
+      {results.map(({ id, name }) => (
+        <div key={id}>{name}</div>
+      ))}
     </div>
   );
 };

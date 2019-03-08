@@ -26,7 +26,6 @@ export default ({ data, location, pageContext }) => {
         description={post.frontmatter.spoiler}
         slug={buildPath(date, slug)}
       />
-      <SocialShare title={post.frontmatter.title} url={url} />
       <main>
         <header>
           <h1>{post.frontmatter.title}</h1>
@@ -36,6 +35,7 @@ export default ({ data, location, pageContext }) => {
           </small>
         </header>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <SocialShare title={post.frontmatter.title} url={url} />
         <footer>
           <div className="tags">
             {post.frontmatter.tags.map(tag => (

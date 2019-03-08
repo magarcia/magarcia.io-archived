@@ -1,21 +1,22 @@
-.aside {
-  position: fixed;
-  top: 150px;
-  margin-left: -50px;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.3s, opacity 0.3s 0s;
+@media only screen and (min-device-width: 480px) {
+  .aside {
+    position: fixed;
+    top: 150px;
+    margin-left: -50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.3s, opacity 0.3s 0s;
+  }
+  .aside.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 0.3s 0s;
+  }
 }
-.aside.visible {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s linear 0s, opacity 0.3s 0s;
-}
-.aside a {
+.aside a:not(.anchor):not(.gatsby-resp-image-link) {
   font-size: 17px;
   color: var(--text);
   opacity: 0.65;
-  display: block;
   position: relative;
   background: var(--bg);
   text-decoration: none;
@@ -26,6 +27,11 @@
   margin: 10px 3px;
   height: 24px;
   background: transparent !important;
+}
+@media only screen and (min-device-width: 480px) {
+  .aside a:not(.anchor):not(.gatsby-resp-image-link) {
+    display: block;
+  }
 }
 .aside a:hover {
   opacity: 1;
