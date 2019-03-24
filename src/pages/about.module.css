@@ -6,7 +6,12 @@
 .jobEntry {
   margin-top: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+@media only screen and (min-device-width: 480px) {
+  .jobEntry {
+    flex-direction: row;
+  }
 }
 
 .jobEntry h3,
@@ -29,7 +34,14 @@
 }
 
 .positions {
-  margin-left: 4rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-device-width: 480px) {
+  .positions {
+    margin-left: 4rem;
+    margin-top: 0;
+  }
 }
 
 .positions .time {

@@ -104,7 +104,7 @@ const About = ({ location }) => {
               {job.positions.map(position => (
                 <div key={position.title} className={styles.position}>
                   <h4>{position.title}</h4>
-                  {job.time && <div className={styles.time}>{job.time}</div>}
+                  {position.time && <div className={styles.time}>{position.time}</div>}
                   <p>{position.description}</p>
                 </div>
               ))}
