@@ -35,6 +35,17 @@ exports[`renders correctly 1`] = `
     >
       stack overflow
     </a>
+     
+    ‐
+     
+    <a
+      href="https://www.linkedin.com/in/martingarciamonterde/"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="linkedin"
+    >
+      linkedin
+    </a>
   </div>
   <div>
     <a

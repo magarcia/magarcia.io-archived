@@ -80,7 +80,7 @@ const jobs = [
 
 const About = ({ location }) => {
   return (
-    <Layout location={location} title={'About'}>
+    <Layout location={location} title="About">
       <SEO />
       <main>
         <h1>
