@@ -130,7 +130,7 @@ const SearchInput = () => {
 
    useEffect(() => {
       searchBloc.query.next(query);
-   }, [query]);
+   }, [searchBloc, query]);
 
    return <input
             type="text"
