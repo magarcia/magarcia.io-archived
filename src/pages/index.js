@@ -13,7 +13,6 @@ const BlogIndex = ({ location, data }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      {/* <Bio /> */}
       <main className="post-list">
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug;

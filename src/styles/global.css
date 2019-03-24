@@ -199,6 +199,13 @@ mark,
 mark {
   background: var(--mark);
 }
+
+.dark h1 mark,
+.dark h2 mark,
+.dark h3 mark {
+  color: white;
+}
+
 main {
   margin: 0 2rem;
 }

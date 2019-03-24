@@ -1,0 +1,45 @@
+.sectionTitle {
+  border-bottom: 1px solid var(--hr);
+  text-transform: lowercase;
+}
+
+.jobEntry {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.jobEntry h3,
+.jobEntry h4 {
+  margin-top: 0;
+}
+.position {
+  margin-bottom: 2rem;
+}
+
+.company {
+  min-width: 40%;
+}
+
+.time {
+  font-weight: 300;
+  font-style: italic;
+  color: var(--info);
+  font-size: smaller;
+}
+
+.positions {
+  margin-left: 4rem;
+}
+
+.positions .time {
+  margin-top: -0.5rem;
+}
+
+.position h4 {
+  font-weight: 300;
+}
+
+.stack {
+  color: var(--info);
+}

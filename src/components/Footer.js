@@ -28,6 +28,15 @@ export default () => (
         title="stackoverflow"
       >
         stack overflow
+      </a>{' '}
+      &#8208;{' '}
+      <a
+        href="https://www.linkedin.com/in/martingarciamonterde/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="linkedin"
+      >
+        linkedin
       </a>
     </div>
 
