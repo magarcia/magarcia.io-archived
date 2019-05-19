@@ -96,7 +96,7 @@ share it to the child components using a React context.
 
 ```jsx
 const searchBloc = new SearchBloc(new API());
-const SearchContext = React.createContext(bloc);
+const SearchContext = React.createContext(searchBloc);
 ```
 
 We have to expose it using the context provider:
