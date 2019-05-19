@@ -136,7 +136,7 @@ const SearchInput = () => {
             type="text"
             name="Search"
             value={query}
-            onChange={({ target }) => setQuery(target.value)
+            onChange={({ target }) => setQuery(target.value)}
           />;
 }
 ```
