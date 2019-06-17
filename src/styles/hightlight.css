@@ -39,8 +39,7 @@ pre[class*='language-'] ::selection {
 }
 /* Code blocks */
 pre[class*='language-'] {
-  /* padding: 2.3rem 1rem 1rem 0rem; */
-  padding: 1rem 1rem 1rem 0rem;
+  padding: 2.3rem 1rem 1rem 0rem;
   margin: 0.5rem 0 2rem 0;
   overflow: auto;
   border-radius: 0.3rem;
@@ -159,12 +158,13 @@ pre[data-line] {
   min-width: calc(100% - 2rem);
   max-width: calc(100% - 2rem);
 }
-/* .gatsby-highlight {
+.gatsby-highlight {
   position: relative;
 }
 .gatsby-highlight:before {
   content: url(../assets/window-controls.svg);
-  position: relative;
-  padding: 1rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   z-index: 1;
-} */
+}
