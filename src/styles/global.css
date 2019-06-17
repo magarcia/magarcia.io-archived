@@ -372,9 +372,13 @@ th {
 td,
 th {
   padding: 10px;
-  border: 1px solid var(--hr);
+  border-bottom: 1px solid var(--hr);
   text-align: left;
   font-size: 18px;
+}
+
+tr:last-of-type td {
+  border-bottom: none;
 }
 
 /* 
