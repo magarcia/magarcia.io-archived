@@ -113,6 +113,10 @@ easily reachable using the next snippet:
 function getMediaQuality() {
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
 
+  if (!connection) {
+    return 'medium';
+  }
+
   switch (connection.effectiveType) {
     case 'slow-2g':
     case '2g':
