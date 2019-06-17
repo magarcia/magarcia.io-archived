@@ -27,7 +27,7 @@
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-json": "^2.1.11",
     "gatsby-transformer-remark": "^2.3.8",
-    "gatsby-transformer-sharp": "^2.1.17",
+    "gatsby-transformer-sharp": "^2.1.21",
     "gray-percentage": "^2.0.0",
     "lint-staged": "^8.1.5",
     "lodash": "^4.17.11",
