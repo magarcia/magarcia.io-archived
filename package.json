@@ -67,7 +67,7 @@
     "dry": "npm build && cd public && npx static-server",
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "prelint": "npm run format",
-    "lint:only": "./node_modules/.bin/eslint --ext .js,.jsx src",
+    "lint:only": "eslint --ext .js,.jsx src",
     "lint": "npm run lint:only",
     "pretest": "npm run lint",
     "test": "jest",
@@ -91,7 +91,6 @@
   "lint-staged": {
     "{gatsby-*.js,src/**/*.{js,jsx,json,css}}": [
       "npm run format",
-      "npm lint",
       "git add"
     ]
   }
