@@ -11,7 +11,7 @@
 body.light {
   --bg: #fff;
   --text: #111;
-  --text-header: #000;
+  --text-header: #111;
   --hr: #ddd;
   --code-bg: rgba(0, 0, 0, 0.05);
   --code-block-bg: #282c34;
@@ -27,7 +27,7 @@ body.dark {
   --text-header: #fff;
   --hr: rgba(255, 255, 255, 0.5);
   --code-bg: rgba(255, 255, 255, 0.05);
-  --code-block-bg: rgba(0, 0, 0, 0.5);
+  --code-block-bg: #1b1b1b;
   --code-text: rgba(255, 255, 255, 0.8);
   --selection: rgba(155, 77, 202, 0.5);
   --mark: rgba(155, 77, 202, 1);
