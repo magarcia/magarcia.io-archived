@@ -121,7 +121,7 @@ h1 {
 }
 @media only screen and (min-device-width: 480px) {
   h1 {
-    font-size: 4rem;
+    font-size: 3.8rem;
   }
 }
 h2 {
@@ -152,15 +152,31 @@ h6 {
 
 /* anchors */
 a[href]:not(.anchor):not(.gatsby-resp-image-link) {
-  text-decoration: none;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, var(--text) 100%, rgba(0, 0, 0, 0) 0);
-  background-image: linear-gradient(to right, currentColor 100%, currentColor 0);
-  background-size: 1px 1px;
-  background-position: 0 1.05rem;
-  background-position: 0 calc(1rem + 3px);
   color: inherit;
-  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  background-position: 0 calc(1rem + 3px);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 2px,
+    var(--text) 2px,
+    var(--text) 3px,
+    rgba(0, 0, 0, 0) 3px
+  );
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  a.custom {
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0) 2px,
+      #333333 2px,
+      #333333 2.5px,
+      rgba(0, 0, 0, 0) 2.5px
+    );
+  }
 }
 
 .anchor svg {
@@ -175,6 +191,7 @@ h4 > a,
 h5 > a,
 h6 > a {
   background: transparent !important;
+  text-shadow: none !important;
 }
 
 h1 a:focus:not(.anchor),
@@ -333,4 +350,79 @@ nav ul {
 
 .tag:not(.token) a:not(.anchor):not(.gatsby-resp-image-link) {
   background: none;
+}
+
+/* Tables */
+table {
+  width: 750px;
+  border-collapse: collapse;
+  margin: 50px auto;
+}
+
+table caption {
+  font-style: italic;
+  padding-top: 10px;
+}
+
+th {
+  font-weight: bold;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid var(--hr);
+  text-align: left;
+  font-size: 18px;
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table {
+    width: 100%;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid var(--hr);
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid var(--hr);
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-column);
+
+    color: var(--text);
+    font-weight: bold;
+  }
 }
