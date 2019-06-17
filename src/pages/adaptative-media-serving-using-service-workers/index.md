@@ -16,7 +16,7 @@ impossible at all.
 
 When it comes to web development, we usually tend to forget about load
 performance focusing more on adding new fancy features. But probably our users
-are not using the last brand new Macbook Pro connected to a 1Gps network. Is
+are not using the last brand new MacBook Pro connected to a 1Gps network. Is
 more likely that they are using a mid-range or low-end mobile device with a
 network connection that in the best case is a 3G connection.
 
@@ -25,7 +25,11 @@ network connection that in the best case is a 3G connection.
 So, taking care about performance is important and one of the most resource
 consumings is media delivery. We are going to show how to adapt the media
 delivery based on the network connection using the
-[Network Information API](http://wicg.github.io/netinfo/)
+[Network Information API](http://wicg.github.io/netinfo/). This is an improved
+version of an experiment I did with my coworker [@Eduardo Aquiles](https://twitter.com/eduaquiles)
+as a React component, similar to what [Max Böck](https://mxb.dev/) explains in
+his article about [connection-aware components](https://mxb.dev/blog/connection-aware-components/),
+but in this case using service workers.
 
 ## The Network Information API
 
@@ -196,6 +200,11 @@ since the service worker will be in charge of that.
 ```html
 <img src=“http://images.magarcia.io/cute_cat” alt=“Cute cat”/>
 ```
+
+## The code
+
+You can find the code of this post (a more complete, clean and with less bugs)
+on [this GitHub repo](https://github.com/estermv/adaptative-media-serving).
 
 ## Further Reading
 
