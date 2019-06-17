@@ -18,11 +18,11 @@ independently of the platform: web application, mobile application, back-end.
 
 It can be considered an alternative to the
 [Redux port for flutter](https://pub.dartlang.org/packages/flutter_redux 'Redux port for flutter') making
-use of Dart streams. In our case we’re going to use Observables from the library
+use of Dart streams. In our case, we’re going to use Observables from the library
 [RxJS](https://rxjs.dev/ 'RxJS') , but any other option like
 [xstream](http://staltz.github.io/xstream/ 'xstream') will be valid as well.
 
-In short the BLoC will:
+In short, the BLoC will:
 
 - contain business logic (ideally in bigger applications we will have multiple BLoCs)
 - rely _exclusively_ on the use of _Observables_ for both input (_Observer_) and output (_Observable_)
@@ -37,7 +37,7 @@ did a better job I will do here), but just some basic hints.
 ![BLoC Schema](./bloc-schema.png)
 
 The BLoC will hold the business logic and components will have no knowledge
-about whats happening inside. Components will send _events_to the BLoC via
+about what's happening inside. Components will send _events_to the BLoC via
 \_Observers_ and will be notified by the BLoC via _Observables_.
 
 ## Implementing the BLoC
@@ -119,26 +119,28 @@ const App = () => {
 ```
 
 It’s important to have the `useEffect` returning the dispose method of the BLoC
-so it will complete the observer when the component is unmount.
+so it will complete the observer when the component is unmounted.
 
 Then we can publish changes to the BLoC from the `SearchInput` component:
 
 ```jsx
 const SearchInput = () => {
-   const searchBloc = useContext(SearchContext);
-   const [query, setQuery] = useState("");
+  const searchBloc = useContext(SearchContext);
+  const [query, setQuery] = useState('');
 
-   useEffect(() => {
-      searchBloc.query.next(query);
-   }, [searchBloc, query]);
+  useEffect(() => {
+    searchBloc.query.next(query);
+  }, [searchBloc, query]);
 
-   return <input
-            type="text"
-            name="Search"
-            value={query}
-            onChange={({ target }) => setQuery(target.value)}
-          />;
-}
+  return (
+    <input
+      type="text"
+      name="Search"
+      value={query}
+      onChange={({ target }) => setQuery(target.value)}
+    />
+  );
+};
 ```
 
 We got the BLoC using the hook `useContext` and then with `useEffect` every time
@@ -176,6 +178,6 @@ The final code is not complex, at least if you have a minimal knowledge about
 _Observables_ and _hooks_. I have the feeling that the code is quite readable
 and helps to keep the business logic outside the components. It’s true that we
 should take care about to unsubscribe from the observables and dispose the BLoC
-when the components are unmounted, but these issues could be easy solvable
+when the components are unmounted, but these issues could be easily solvable
 creating some new hooks like `useBlocObservable` and `useBlocObserver`. But this
 I’ll try in the future, soon I hope, in a side project I’m using this pattern.
