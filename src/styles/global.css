@@ -8,6 +8,10 @@
   font-family: inherit;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body.light {
   --bg: #fff;
   --text: #111;
