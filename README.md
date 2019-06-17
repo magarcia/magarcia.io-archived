@@ -1,4 +1,10 @@
-# Personal blog [![Travis][build-badge]][build-status] [![Coverage][coverage-badge]][coverage-status] [![CodeClimate][codeclimate-badge]][codeclimate-status] [![Requirements][requirements-badge]][requirements-status]
+[![Travis][build-badge]][build-status]
+
+[![Coverage][coverage-badge]][coverage-status]
+
+[![CodeClimate][codeclimate-badge]][codeclimate-status]
+
+[![Requirements][requirements-badge]][requirements-status]
 
 <!-- Definitions -->
 
