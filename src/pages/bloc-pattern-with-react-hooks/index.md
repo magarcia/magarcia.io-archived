@@ -95,22 +95,21 @@ In order to use it on React we need to create a new instance of the BLoC and
 share it to the child components using a React context.
 
 ```jsx
-const searchBloc = new SearchBloc(new API());
-const SearchContext = React.createContext(searchBloc);
+const SearchContext = React.createContext<SearchBloc>();
 ```
 
 We have to expose it using the context provider:
 
 ```jsx
 const App = () => {
-  const searchBloc = useContext(SearchContext);
+  const [searchBloc] = useState(new SearchBloc(new API()));
 
   useEffect(() => {
     return searchBloc.dispose;
   }, [searchBloc]);
 
   return (
-    <SearchContext.Provider>
+    <SearchContext.Provider value={searchBloc}>
       <SearchInput />
       <ResultList />
     </SearchContext.Provider>
