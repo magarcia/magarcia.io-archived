@@ -155,7 +155,8 @@ Then the JavaScript snippet above will get all the images in the document and
 will replace the quality parameter to the appropriate one based on what the
 `getMediaQuality` function returns. If the quality is `low` is not going to do
 more requests, but if it changes it will do two requests: one with the `low`
-quality image and another one with `medium` or `high` quality.
+quality image when the browsers parses the `img` tag and another one with
+`medium` or `high` quality when the JavaScript code is executed.
 
 This is not ideal but it will improve load times on slow networks. But for
 medium/high connection networks, as we mentioned before, it will make two
