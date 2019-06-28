@@ -22,14 +22,14 @@ network connection that in the best case is a 3G connection.
 
 > [In 2018, 52.2% of all global web pages were served to mobile phones.](https://www.statista.com/statistics/241462/global-mobile-phone-website-traffic-share/)
 
-So, taking care about performance is important and one of the most resource
-consumings is media delivery. We are going to show how to adapt the media
+So, taking care of performance is important and one of the most resource-consuming
+is media delivery. We are going to show how to adapt the media
 delivery based on the network connection using the
 [Network Information API](http://wicg.github.io/netinfo/). This is an improved
 version of an experiment I did with my coworker [@Eduardo Aquiles](https://twitter.com/eduaquiles)
 as a React component, similar to what [Max Böck](https://mxb.dev/) explains in
-his article about [connection-aware components](https://mxb.dev/blog/connection-aware-components/),
-but in this case using service workers.
+his article about [connection-aware components](https://mxb.dev/blog/connection-aware-components/)
+but in this case, using service workers.
 
 ## The Network Information API
 
@@ -87,7 +87,7 @@ information about the network. The most relevant for us in this article are:
 
 ### Browser support
 
-The API does not have a full browser support yet, but is [supported by the most
+The API does not have a full browser support yet but is [supported by the most
 popular mobile browsers](https://caniuse.com/#feat=netinfo)
 which are the ones where this technique will have more impact.
 
@@ -99,14 +99,14 @@ In fact, 70% of mobile users have this API enabled on their device.
 
 Our purpose will be to serve different media resources based on the information
 that we get from the `effectiveType` attribute. When we talk about different
-media resources it could be a complete different media, like switching between
+media resources it could be a completely different media, like switching between
 HD video, HD image or low quality image, the approach suggested by
 [Addy Osmani](https://addyosmani.com/blog/adaptive-serving/).
 
-In this example we are going to use different compression levels for the same
+In this example, we are going to use different compression levels for the same
 image.
 
-First we need to get the proper quality based on the network conditions. This is
+First, we need to get the proper quality based on network conditions. This is
 easily reachable using the next snippet:
 
 ```javascript
@@ -155,7 +155,7 @@ Then the JavaScript snippet above will get all the images in the document and
 will replace the quality parameter to the appropriate one based on what the
 `getMediaQuality` function returns. If the quality is `low` is not going to do
 more requests, but if it changes it will do two requests: one with the `low`
-quality image when the browsers parses the `img` tag and another one with
+quality image when the browsers parse the `img` tag and another one with
 `medium` or `high` quality when the JavaScript code is executed.
 
 This is not ideal but it will improve load times on slow networks. But for
@@ -164,7 +164,7 @@ requests for each image consuming more data than needed.
 
 ## Using Service Workers
 
-The problem mentioned regarding the two request can be fixed using
+The problem mentioned regarding the two requests can be fixed using
 [service workers](https://developers.google.com/web/fundamentals/primers/service-workers/),
 intercepting the request made by the browser and replacing it with the
 appropriate quality for the image.
@@ -208,7 +208,7 @@ since the service worker will be in charge of that.
 
 ## The code
 
-You can find the code of this post (a more complete, clean and with less bugs)
+You can find the code of this post (a more complete, clean and with fewer bugs)
 on [this GitHub repo](https://github.com/estermv/adaptative-media-serving).
 
 ## Further Reading
