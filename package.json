@@ -30,7 +30,7 @@
     "gatsby-transformer-sharp": "^2.2.4",
     "gray-percentage": "^2.0.0",
     "lint-staged": "^9.1.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.15",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
