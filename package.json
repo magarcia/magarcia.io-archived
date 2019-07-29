@@ -31,7 +31,7 @@
     "gray-percentage": "^2.0.0",
     "lint-staged": "^9.1.0",
     "lodash": "^4.17.15",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
