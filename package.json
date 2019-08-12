@@ -57,7 +57,7 @@
     "jest": "^24.8.0",
     "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
     "prettier": "^1.18.2",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.9.0"
   },
   "homepage": "https://magarcia.io",
   "license": "MIT",
