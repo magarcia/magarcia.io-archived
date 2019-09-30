@@ -53,7 +53,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "husky": "^3.0.4",
+    "husky": "^3.0.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
