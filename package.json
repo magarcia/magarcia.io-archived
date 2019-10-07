@@ -39,7 +39,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.6.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-preset-gatsby": "^0.2.17",
