@@ -2,18 +2,21 @@
   "extends": ["airbnb", "prettier", "react-app", "plugin:prettier/recommended"],
   "plugins": ["prettier"],
   "rules": {
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-one-expression-per-line": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "react/prop-types": "off",
-    "react/require-default-props": "off",
-    "react/forbid-prop-types": "off",
-    "react/no-danger": "off",
+    "jsx-a11y/href-no-hash": [0],
     "jsx-a11y/html-has-lang": "off",
     "no-param-reassign": "off",
     "no-underscore-dangle": "off",
     "prettier/prettier": ["error"],
-    "jsx-a11y/href-no-hash": [0],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-danger": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": "off"
   }
 }
