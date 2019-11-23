@@ -70,7 +70,10 @@ export default ({ data, location, pageContext }) => {
         </footer>
         <nav>
           <ul>
-            {[[previous, 'prev'], [next, 'next']].map(([p, rel]) => (
+            {[
+              [previous, 'prev'],
+              [next, 'next']
+            ].map(([p, rel]) => (
               <li key={rel}>
                 {p && (
                   <Link
