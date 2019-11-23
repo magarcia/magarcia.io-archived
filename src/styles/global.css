@@ -65,6 +65,12 @@ body {
   }
 }
 
+@media print {
+  body {
+    font-family: Helvetica;
+  }
+}
+
 p,
 ul,
 ol,
