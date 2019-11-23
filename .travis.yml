@@ -9,7 +9,7 @@ cache:
 before_install:
   - npm update
 install:
-  - npm install
+  - npm ci
 before_script:
   - npm -g install firebase-tools
   - npm -g install gatsby
