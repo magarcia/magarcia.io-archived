@@ -14,7 +14,7 @@ by Robert C. Martin.
 
 <!-- TODO: Extend introduction -->
 
-Apply these principles helps to develop maintainable and extensible code. They
+Applying these principles helps to develop maintainable and extensible code. They
 also help to catch code smells, refactor code easily, and practice a good agile
 development.
 
@@ -37,7 +37,7 @@ software entity that performs some calculations the only reason to change it is
 if this calculations need to change.
 
 In order to understand better the principle, we can do an example. Let's say
-that we have to implement an application that given some shapes it calculates
+that we have to implement an application that given some shapes it calculates the
 sum of the area of this shapes and prints the output.
 
 We start creating our shapes classes:
@@ -60,7 +60,7 @@ class Square {
 }
 ```
 
-Now we create an `AreaCalculator` class that is going have the logic to sum
+Now we create an `AreaCalculator` class that is going to have the logic to sum
 the area of our shapes.
 
 ```typescript
@@ -122,7 +122,7 @@ change the output, it will affect only `Outputter`.
 > extension, but closed for modification.
 
 A desirable property that our software entities is to be easy to extend his
-functionality without the need of modificate the entity itself.
+functionality without the need to change the entity itself.
 
 Using the previous example, now we want to introduce a new fancy shape: the
 _Triangle_. But first take a closer look to the sum part of our `AreaCalculator`
@@ -290,7 +290,7 @@ class VolumeCalculator extends AreaCalculator {
 
 > Make fine grained interfaces that are client specific.
 
-In this case we what to keep interfaces as small as possible, so clients are not
+In this case we want to keep interfaces as small as possible, so clients are not
 forced to implement methods that they don't actually need.
 
 <!-- REVIEW: This explanation could be more detailed -->
@@ -359,7 +359,7 @@ In this case `ShapeManager` is high-level module while `MySQL` is a low-level
 module, but this is a violation of the `Dependency Inversion Principle` since we
 are forced to depend on `MySQL`.
 
-If we want to change our database in the future we whould edit the `ShapeManager`
+If we want to change our database in the future we would have to edit the `ShapeManager`
 class and thus violates _Open-Close Principle_. In this case we should not care
 about which kind of database are we using, so to depend on abstractions on this
 case we will make use of an interface:
