@@ -51,19 +51,6 @@ module.exports = {
               inlineCodeMarker: '÷'
             }
           },
-          // {
-          //   resolve: `gatsby-transformer-remark`,
-          //   options: {
-          //     plugins: [
-          //       {
-          //         resolve: `gatsby-remark-codemirror`,
-          //         options: {
-          //           theme: 'one-dark'
-          //         }
-          //       }
-          //     ]
-          //   }
-          // },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants'
         ]
@@ -99,16 +86,15 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
               allMarkdownRemark.edges.map(edge => {
-                const siteUrl = site.siteMetadata.siteUrl;
-                const url =
-                  siteUrl +
-                  `/${edge.node.frontmatter.date.replace(/-/g, '/')}` +
-                  edge.node.fields.slug;
+                const { siteUrl } = site.siteMetadata;
+                const url = `${siteUrl}/${edge.node.frontmatter.date.replace(/-/g, '/')}${
+                  edge.node.fields.slug
+                }`;
                 const postText = `
                 <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at magarcia.io. You can read it online by <a href="${url}">clicking here</a>.)</div>
               `;
 
-                let html = edge.node.html;
+                let { html } = edge.node;
                 // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
                 html = html
                   .replace(/href="\//g, `href="${siteUrl}/`)
@@ -116,13 +102,14 @@ module.exports = {
                   .replace(/"\/static\//g, `"${siteUrl}/static/`)
                   .replace(/,\s*\/static\//g, `,${siteUrl}/static/`);
 
-                return Object.assign({}, edge.node.frontmatter, {
+                return {
+                  ...edge.node.frontmatter,
                   description: edge.node.frontmatter.spoiler,
                   date: edge.node.fields.date,
-                  url: url,
+                  url,
                   guid: url,
                   custom_elements: [{ 'content:encoded': html + postText }]
-                });
+                };
               }),
             query: `
               {
