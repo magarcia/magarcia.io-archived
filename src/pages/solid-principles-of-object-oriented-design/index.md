@@ -92,14 +92,14 @@ console.log(areas.output());
 ```
 
 But this implementation has a problem. In this example `AreaCalculator`
-handles the logic of calculate the sum of the areas **AND** to output the data.
-What if the user whants the output in JSON?
+handles the logic to calculate the sum of the areas **AND** to output the data.
+What if the user wants the output in JSON?
 
 Here is when _Single Responsibility Principle_ comes into play. `AreaCalculator`
 should only change if we change how we calculate the sum of the areas, not when
 we want a different output or representation.
 
-We can fix this by implementing a class which his only responsability is to
+We can fix this by implementing a class which its only responsibility is to
 output the data.
 
 ```typescript
@@ -112,7 +112,7 @@ console.log(output.text());
 console.log(output.json());
 ```
 
-Now we have two classes with one responsability each one, if we want to change
+Now we have two classes with one responsibility each one, if we want to change
 how calculations are made only `AreaCalculator` will change and the same to
 change the output, it will affect only `Outputter`.
 
@@ -211,7 +211,7 @@ with instances of their subtypes without altering the correctness of that
 program. So if you pass a subclass of an abstraction you need to make sure you
 don’t alter any behavior or state semantics of the parent abstraction.
 
-Continuing with the `AreaCalculator` class, now we whant to create a
+Continuing with the `AreaCalculator` class, now we want to create a
 `VolumeCalculator` class that extends `AreaCalculator`:
 
 ```typescript
@@ -341,7 +341,7 @@ on low-level modules, but they should depend on abstractions.
 <!-- REVIEW: This explanation could be more detailed -->
 
 This principle allows for decoupling, an example that seems like the best way to
-explain this principle. Let's see new class to save our shapes `ShapeManager`:
+explain this principle. Let's see a new class to save our shapes `ShapeManager`:
 
 ```typescript
 class ShapeManager {
@@ -355,7 +355,7 @@ class ShapeManager {
 }
 ```
 
-In this case `ShapeManager` is high-level module while `MySQL` is a low-level
+In this case `ShapeManager` is a high-level module while `MySQL` is a low-level
 module, but this is a violation of the `Dependency Inversion Principle` since we
 are forced to depend on `MySQL`.
 
