@@ -183,6 +183,7 @@ pre[class*='language-'] {
   .gatsby-highlight {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     margin: 2rem 0;
+    margin: 2rem calc(5% - 5vw);
   }
 }
 
@@ -208,4 +209,12 @@ pre[class*='language-'] {
   font-weight: 700;
   text-transform: uppercase;
   opacity: 0.5;
+}
+
+code[class='language-text'] {
+  color: #fff;
+}
+
+pre[class*='language-'] *::selection {
+  background: rgba(173, 214, 255, 0.15);
 }
