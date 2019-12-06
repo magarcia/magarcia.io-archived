@@ -211,6 +211,15 @@ a[href]:not(.anchor):not(.gatsby-resp-image-link) {
     var(--text) 3px,
     rgba(0, 0, 0, 0) 3px
   );
+  transition: color 0.5s;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+a[href]:not(.anchor):not(.gatsby-resp-image-link):hover {
+  background-color: var(--mark);
+  text-shadow: none;
+  transform-origin: 0% 50%;
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   a.custom {
@@ -351,7 +360,7 @@ ul li del {
 .footer {
   display: flex;
   justify-content: space-between;
-  margin: 2rem;
+  margin: 2rem auto;
 }
 footer,
 nav {
