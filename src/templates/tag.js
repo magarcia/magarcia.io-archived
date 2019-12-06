@@ -8,10 +8,10 @@ import Anchor from '../components/icons/anchor';
 
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
-  const { totalCount } = data.allMarkdownRemark;
+  const { totalCount } = data.allMdx;
   const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`;
   const siteTitle = get(data, 'site.siteMetadata.title');
-  const posts = get(data, 'allMarkdownRemark.edges');
+  const posts = get(data, 'allMdx.edges');
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -44,11 +44,6 @@ const Tags = ({ pageContext, data, location }) => {
                 </time>{' '}
                 &#8208; {formatReadingTime(node.timeToRead)}
               </small>
-              {/* <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.spoiler || node.excerpt
-                }}
-              /> */}
             </div>
           );
         })}
@@ -67,7 +62,7 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } } }

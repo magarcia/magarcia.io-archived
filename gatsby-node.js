@@ -12,7 +12,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(
+            allMdx(
               sort: { fields: [frontmatter___date], order: DESC }
               filter: { frontmatter: { draft: { ne: true } } }
               limit: 1000
@@ -41,7 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
+        const posts = result.data.allMdx.edges;
 
         _.each(posts, (post, index) => {
           const previous = index === posts.length - 1 ? null : posts[index + 1].node;
@@ -92,7 +92,12 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
-  if (_.get(node, 'internal.type') === `MarkdownRemark`) {
+  if (_.get(node, 'internal.type') === `Mdx`) {
+    createNodeField({
+      node,
+      name: 'slug',
+      value: `/${path.basename(path.dirname(_.get(node, 'fileAbsolutePath')))}`
+    });
     createNodeField({
       node,
       name: 'directoryName',

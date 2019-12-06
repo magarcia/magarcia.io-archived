@@ -6,9 +6,10 @@ import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import { buildPath, formatPostDate, formatReadingTime } from '../utils/helpers';
 
-const BlogIndex = ({ location, data }) => {
+const BlogIndex = props => {
+  const { data, location } = props;
   const siteTitle = get(data, 'site.siteMetadata.title');
-  const posts = get(data, 'allMarkdownRemark.edges');
+  const posts = get(data, 'allMdx.edges');
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -55,7 +56,7 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
     ) {

@@ -26,16 +26,26 @@ module.exports = {
     },
     `gatsby-transformer-json`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-plugin-draft',
       options: {
-        plugins: [
+        publishDraft: process.env.NODE_ENV !== 'production'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
               withWebp: true,
               linkImagesToOriginal: false,
-              tracedSVG: true
+              tracedSVG: true,
+              //   showCaptions: true,
+              markdownCaptions: true,
+              quality: 80
             }
           },
           {
@@ -44,11 +54,44 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`
             }
           },
-          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: `<svg
+              className="feather feather-hash"
+              height="22"
+              width="22"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" strokeLinecap="round" strokeWidth="2">
+                <path d="M4 9h16" />
+                <path d="M4 15h16" />
+                <path d="M10 3L8 21" />
+                <path d="M16 3l-2 18" />
+              </g>
+            </svg>`
+            }
+          },
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
-              inlineCodeMarker: '÷'
+              inlineCodeMarker: '÷',
+              //   showLineNumbers: true,
+              languageExtensions: [
+                {
+                  language: 'yumml',
+                  extend: 'yaml',
+                  definition: {
+                    superscript_types: /(SuperType)/
+                  },
+                  insertBefore: {
+                    function: {
+                      superscript_keywords: /(superif|superelse)/
+                    }
+                  }
+                }
+              ]
             }
           },
           'gatsby-remark-copy-linked-files',
@@ -84,8 +127,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge => {
+            serialize: ({ query: { site, allMdx } }) =>
+              allMdx.edges.map(edge => {
                 const { siteUrl } = site.siteMetadata;
                 const url = `${siteUrl}/${edge.node.frontmatter.date.replace(/-/g, '/')}${
                   edge.node.fields.slug
@@ -113,10 +156,9 @@ module.exports = {
               }),
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
                   limit: 1000,
                   sort: { order: DESC, fields: [frontmatter___date] }
-                  filter: {fields: { langKey: {eq: "en"}}}
                 ) {
                   edges {
                     node {
@@ -153,13 +195,6 @@ module.exports = {
         icon: `src/assets/icon.png`
       }
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyDefault: 'en',
-        useLangKeyLayout: false
-      }
-    }
+    `gatsby-plugin-react-helmet`
   ]
 };

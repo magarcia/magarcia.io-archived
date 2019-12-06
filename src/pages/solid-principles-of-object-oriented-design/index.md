@@ -2,7 +2,7 @@
 title: SOLID - Principles of Object-Oriented Design
 date: '2019-11-23'
 spoiler: Looking at the SOLID Principles with a more clear explanation and some examples.
-draft: true
+draft: false
 tags:
   - Object-Oriented
   - Computer Science

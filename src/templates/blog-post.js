@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import SocialShare from '../components/SocialShare';
 import { buildPath, formatPostDate, formatReadingTime } from '../utils/helpers';
-import '../styles/hightlight.css';
+import '../styles/highlight.css';
 
 const GITHUB_USERNAME = 'magarcia';
 const GITHUB_REPO_NAME = 'magarcia.io';
 
 export default ({ data, location, pageContext }) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const siteTitle = get(data, 'site.siteMetadata.title');
   const { previous, next, slug, date } = pageContext;
   const url = `https://magarcia.io${buildPath(date, slug)}`;
@@ -26,7 +27,7 @@ export default ({ data, location, pageContext }) => {
         description={post.frontmatter.spoiler}
         slug={buildPath(date, slug)}
       />
-      <main>
+      <main className="post">
         <header>
           <h1>{post.frontmatter.title}</h1>
           <small className="info">
@@ -34,7 +35,10 @@ export default ({ data, location, pageContext }) => {
             &#8208; {formatReadingTime(post.timeToRead)}
           </small>
         </header>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="post__content" itemProp="articleBody">
+          <p className="lead">{post.frontmatter.spoiler}</p>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
         <SocialShare title={post.frontmatter.title} url={url} />
         <footer>
           <div style={{ display: 'inline-block' }}>
@@ -103,9 +107,9 @@ export const pageQuery = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
-      html
+      body
       timeToRead
       frontmatter {
         title

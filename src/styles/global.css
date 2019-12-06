@@ -10,25 +10,25 @@
 
 body.light {
   --bg: #fff;
-  --text: #111;
-  --text-header: #111;
+  --text: #373a3c;
+  --text-header: #373a3c;
   --hr: #ddd;
-  --code-bg: rgba(0, 0, 0, 0.05);
-  --code-block-bg: #282c34;
-  --code-text: #333;
+  --bg-color-secondary: #f7f7f9;
+  --border-color: #eceeef;
+  --code-text: var(--text);
   --selection: rgba(250, 240, 20, 0.5);
   --mark: rgba(250, 240, 20, 1);
   --info: hsla(200, 0%, 0%, 0.55);
 }
 
 body.dark {
-  --bg: #363636;
-  --text: #b0b0b0;
+  --bg: #1d1f21;
+  --text: rgba(255, 255, 255, 0.8);
   --text-header: #fff;
   --hr: rgba(255, 255, 255, 0.5);
-  --code-bg: rgba(255, 255, 255, 0.05);
-  --code-block-bg: #1b1b1b;
-  --code-text: rgba(255, 255, 255, 0.8);
+  --bg-color-secondary: #818a91;
+  --border-color: #2d2d2d;
+  --code-text: #fff;
   --selection: rgba(155, 77, 202, 0.5);
   --mark: rgba(155, 77, 202, 1);
   --info: rgba(255, 255, 255, 0.5);
@@ -38,12 +38,10 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter UI', -system-ui, system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 1.125rem;
+  line-height: 1.65;
   transition: background-color 0.8s ease;
   width: 100%;
-  max-width: 45rem;
-  margin: 0 auto;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-overflow-scrolling: touch;
@@ -54,6 +52,12 @@ body {
   -o-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
   -webkit-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
   font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+}
+@media only screen and (min-device-width: 480px) {
+  body {
+    font-size: 22px;
+    line-height: 1.5;
+  }
 }
 
 @supports (font-variation-settings: normal) {
@@ -103,6 +107,23 @@ b {
 
 article {
   margin-bottom: 4rem;
+}
+
+.post__content {
+  max-width: 41rem;
+  margin: 0 auto;
+}
+
+.post__content .lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+@media only screen and (min-device-width: 480px) {
+  .post__content .lead {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /* headings */
@@ -163,7 +184,6 @@ a[href]:not(.anchor):not(.gatsby-resp-image-link) {
   position: relative;
   text-shadow: -1px -1px 0 var(--bg), 1px -1px 0 var(--bg), -1px 1px 0 var(--bg),
     1px 1px 0 var(--bg);
-  background-position: 0 -1rem;
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0),
@@ -186,11 +206,12 @@ a[href]:not(.anchor):not(.gatsby-resp-image-link) {
   }
 }
 
-.anchor svg {
+.anchor a {
   fill: var(--text-header);
 }
 
 /* anchors: headings */
+
 h1 > a,
 h2 > a,
 h3 > a,
@@ -199,6 +220,27 @@ h5 > a,
 h6 > a {
   background: transparent !important;
   text-shadow: none !important;
+}
+
+h1 > a.anchor,
+h2 > a.anchor,
+h3 > a.anchor,
+h4 > a.anchor,
+h5 > a.anchor,
+h6 > a.anchor {
+  margin-left: -1.5rem;
+  margin-right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+h1:hover > a.anchor,
+h2:hover > a.anchor,
+h3:hover > a.anchor,
+h4:hover > a.anchor,
+h5:hover > a.anchor,
+h6:hover > a.anchor {
+  opacity: 1;
 }
 
 h1 a:focus:not(.anchor),
@@ -231,13 +273,27 @@ mark {
 }
 
 main {
-  margin: 0 2rem;
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+main.post header {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-device-width: 480px) {
+  main.post header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
 }
 
 blockquote {
   border-left: 3px solid var(--text);
   padding: 0.2rem 2rem;
   font-style: italic;
+  background: var(--bg-color-secondary);
 }
 
 ul {
@@ -254,7 +310,9 @@ ul li del {
   justify-content: space-between;
   align-items: center;
   cursor: default;
-  margin: 2rem 2rem 5rem 2rem;
+  max-width: 65rem;
+  padding: 2rem;
+  margin: 0 auto 0 auto;
 }
 .header h1 {
   background: var(--mark);
@@ -262,6 +320,7 @@ ul li del {
   padding: 0 1rem;
   height: 3.8rem;
   margin: 0 -1rem;
+  text-align: center;
 }
 .header h1 a::selection {
   background: transparent;
@@ -276,10 +335,13 @@ ul li del {
   justify-content: space-between;
   margin: 2rem;
 }
-.footer,
+footer,
 nav {
   margin-top: 4.375rem;
   padding-top: 1.75rem;
+  max-width: 41rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 nav ul {
   display: flex;
@@ -291,7 +353,11 @@ nav ul {
 .info {
   color: var(--info);
 }
-
+.post-list {
+  max-width: 41rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 .post-list header h3 {
   margin-bottom: 0;
 }
@@ -345,14 +411,15 @@ nav ul {
   margin: 1rem 0 2rem 0;
 }
 .tag:not(.token) {
-  background: var(--code-bg);
+  background-color: var(--bg-color-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 3px;
   margin-right: 0.6rem;
-  padding: 0.1rem 0.9rem;
-  font-size: 0.8888rem;
+  padding: 0.2rem 0.9rem;
   height: 1.5rem;
   vertical-align: bottom;
   line-height: 1.5rem;
+  font-size: 1rem;
 }
 
 .tag:not(.token) a:not(.anchor):not(.gatsby-resp-image-link) {
@@ -436,4 +503,13 @@ and also iPads specifically.
     color: var(--text);
     font-weight: bold;
   }
+}
+
+.gatsby-resp-image-wrapper img {
+  width: 100%;
+}
+
+/* HACK: Fix progressive image loading background */
+.gatsby-resp-image-background-image {
+  position: absolute !important;
 }

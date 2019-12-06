@@ -1,8 +1,7 @@
 @media only screen and (min-device-width: 480px) {
   .aside {
     position: fixed;
-    top: 150px;
-    margin-left: -50px;
+    top: 200px;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s linear 0.3s, opacity 0.3s 0s;
