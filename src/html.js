@@ -25,7 +25,7 @@ const HTML = ({
                 function setTheme(newTheme) {
                   window.__theme = newTheme;
                   preferredTheme = newTheme;
-                  document.body.className = newTheme;
+                  document.documentElement.className = newTheme;
                   window.__onThemeChange(newTheme);
                 }
                 var preferredTheme;
