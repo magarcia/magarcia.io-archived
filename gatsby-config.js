@@ -148,9 +148,12 @@ module.exports = {
                 return {
                   ...edge.node.frontmatter,
                   description: edge.node.frontmatter.spoiler,
-                  date: edge.node.fields.date,
+                  date: edge.node.frontmatter.date,
+                  author: 'Martin Garcia',
+                  language: 'en',
                   url,
                   guid: url,
+                  categories: edge.node.frontmatter.tags,
                   custom_elements: [{ 'content:encoded': html + postText }]
                 };
               }),
@@ -171,6 +174,7 @@ module.exports = {
                         title
                         date
                         spoiler
+                        tags
                       }
                     }
                   }
@@ -178,7 +182,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'magarcia Blog RSS Feed'
+            title: 'magarcia.io'
           }
         ]
       }
