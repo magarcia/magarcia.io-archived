@@ -45,13 +45,13 @@
     --text: rgba(255, 255, 255, 0.8);
     --text-header: #fff;
     --hr: rgba(255, 255, 255, 0.5);
-    --bg-color-secondary: #818a91;
+    --bg-color-secondary: #373a3c;
     --border-color: #2d2d2d;
     --code-text: #fff;
     --selection: rgba(155, 77, 202, 0.5);
     --mark: rgba(155, 77, 202, 1);
     --info: rgba(255, 255, 255, 0.5);
-    --bg-blockquote: #272727;
+    --bg-blockquote: #373a3c;
   }
 }
 
