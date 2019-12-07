@@ -68,7 +68,7 @@ function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
                 '@type': 'ImageObject',
                 url: metaImage
               },
-              datePublished: date.toISOString(),
+              datePublished: date,
               author: {
                 '@type': 'Person',
                 name: data.site.author,
