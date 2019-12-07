@@ -111,7 +111,7 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-feed-mdx`,
       options: {
         query: `
           {
