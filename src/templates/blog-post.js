@@ -26,6 +26,7 @@ export default ({ data, location, pageContext }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.spoiler}
         slug={buildPath(date, slug)}
+        date={date}
       />
       <main className="post">
         <header>

@@ -20,7 +20,7 @@ const query = graphql`
   }
 `;
 
-function SEO({ meta, image, title, description, slug, lang = 'en' }) {
+function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
   return (
     <StaticQuery
       query={query}
@@ -67,6 +67,17 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
               image: {
                 '@type': 'ImageObject',
                 url: metaImage
+              },
+              datePublished: date.toISOString(),
+              author: {
+                '@type': 'Person',
+                name: data.site.author,
+                email: 'contact@magarcia.io'
+              },
+              publisher: {
+                '@type': 'Person',
+                name: data.site.author,
+                email: 'contact@magarcia.io'
               },
               description: metaDescription
             }
@@ -164,7 +175,8 @@ SEO.propTypes = {
   image: PropTypes.string,
   meta: PropTypes.array,
   slug: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  date: PropTypes.any
 };
 
 export default SEO;
