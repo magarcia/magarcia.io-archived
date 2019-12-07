@@ -1,0 +1,129 @@
+@media print {
+  /** Setting margins */
+  @page :left {
+    margin: 1cm;
+  }
+
+  @page :right {
+    margin: 1cm;
+  }
+
+  * {
+    text-shadow: none !important;
+  }
+  /* Set font to 16px/13pt, set background to white and font to black.*/
+  /* This saves ink */
+  body {
+    font: 13pt Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.3;
+    background: #fff !important;
+    color: #000;
+  }
+
+  .post__content {
+    max-width: 100%;
+  }
+
+  a[href]:not([href^='#']):not([href='/']):after {
+    content: ' (' attr(href) ')';
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+  }
+  h3 {
+    font-size: 16pt;
+  }
+
+  h4 {
+    font-size: 14pt;
+  }
+  h5,
+  h6 {
+    font-size: 12pt;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 25pt;
+  }
+
+  .header h1 {
+    background: none;
+  }
+
+  .footer a {
+    display: block;
+  }
+
+  /* Defining all page breaks */
+  a {
+    page-break-inside: avoid;
+    background: none !important;
+  }
+  a[title='rss'] {
+    display: none;
+  }
+  blockquote {
+    page-break-inside: avoid;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  img {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+  ul,
+  ol,
+  dl {
+    page-break-before: avoid;
+  }
+
+  /* Hide useless components */
+  .darkLightMode {
+    display: none;
+  }
+
+  header .info {
+    color: transparent;
+  }
+
+  header .info time {
+    color: #000;
+  }
+
+  main footer,
+  main nav,
+  main aside {
+    display: none;
+  }
+
+  /* Code blocks */
+  .gatsby-highlight {
+    margin: 0 !important;
+  }
+
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: var(--bg-blockquote) !important;
+    font-size: 10pt;
+  }
+}
+@import url('./print-highlight.css');

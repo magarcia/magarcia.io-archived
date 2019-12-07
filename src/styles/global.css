@@ -23,18 +23,20 @@
   --bg-blockquote: var(--bg-color-secondary);
 }
 
-:root.dark {
-  --bg: #272727;
-  --text: rgba(255, 255, 255, 0.8);
-  --text-header: #fff;
-  --hr: rgba(255, 255, 255, 0.5);
-  --bg-color-secondary: #818a91;
-  --border-color: #2d2d2d;
-  --code-text: #fff;
-  --selection: rgba(155, 77, 202, 0.5);
-  --mark: rgba(155, 77, 202, 1);
-  --info: rgba(255, 255, 255, 0.5);
-  --bg-blockquote: #373a3c;
+@media only screen {
+  :root.dark {
+    --bg: #272727;
+    --text: rgba(255, 255, 255, 0.8);
+    --text-header: #fff;
+    --hr: rgba(255, 255, 255, 0.5);
+    --bg-color-secondary: #818a91;
+    --border-color: #2d2d2d;
+    --code-text: #fff;
+    --selection: rgba(155, 77, 202, 0.5);
+    --mark: rgba(155, 77, 202, 1);
+    --info: rgba(255, 255, 255, 0.5);
+    --bg-blockquote: #373a3c;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -85,12 +87,6 @@ body {
   }
   html.vf-alt body {
     font-family: 'Inter UI var alt', -system-ui, system-ui, sans-serif;
-  }
-}
-
-@media print {
-  body {
-    font-family: Helvetica;
   }
 }
 
