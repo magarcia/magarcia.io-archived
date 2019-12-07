@@ -1,24 +1,27 @@
 ---
 title: SOLID - Principles of Object-Oriented Design
-date: '2019-11-23'
-spoiler: Looking at the SOLID Principles with a more clear explanation and some examples.
-draft: false
+date: '2019-12-07'
+spoiler: SOLID Principles are a valuable tool to write good object-oriented
+  software. This article tries to put some light on the subject with simple
+  explanations and examples for each principle using TypeScript.
 tags:
   - Object-Oriented
   - Computer Science
+  - SOLID
+  - TypeScript
 ---
+
+> This article is based on the work done by [Samuel Oloruntoba](https://twitter.com/KayandraJT) in his article
+> [S.O.L.I.D: The First 5 Principles of Object Oriented Design](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) but using
+> TypeScript instead of PHP for the examples.
 
 **SOLID** is an acronym for the first five principles of the article
 [_Principles of Object-Oriented Design_](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
 by Robert C. Martin.
 
-<!-- TODO: Extend introduction -->
-
 Applying these principles helps to develop maintainable and extensible code. They
 also help to catch code smells, refactor code easily, and practice a good agile
 development.
-
-<!-- TODO: Explain that this article is heavy based on examples from the PHP one -->
 
 - **S** stands for **SRP** - Single Responsibility Principle
 - **O** stands for **OCP** - Open-Closed Principle
@@ -34,11 +37,11 @@ development.
 This principle means that an entity should do only one thing. So single
 responsibility denotes some **work in isolation**. Therefore if we have a
 software entity that performs some calculations the only reason to change it is
-if this calculations need to change.
+if these calculations need to change.
 
 In order to understand better the principle, we can do an example. Let's say
 that we have to implement an application that given some shapes it calculates the
-sum of the area of this shapes and prints the output.
+sum of the area of these shapes and prints the output.
 
 We start creating our shapes classes:
 
@@ -91,7 +94,7 @@ const areas = new AreaCalculator(shapes);
 console.log(areas.output());
 ```
 
-But this implementation has a problem. In this example `AreaCalculator`
+But this implementation has a problem. In this example, `AreaCalculator`
 handles the logic to calculate the sum of the areas **AND** to output the data.
 What if the user wants the output in JSON?
 
@@ -125,7 +128,7 @@ A desirable property that our software entities is to be easy to extend his
 functionality without the need to change the entity itself.
 
 Using the previous example, now we want to introduce a new fancy shape: the
-_Triangle_. But first take a closer look to the sum part of our `AreaCalculator`
+_Triangle_. But first, take a closer look at the sum part of our `AreaCalculator`
 class.
 
 ```typescript
@@ -157,7 +160,7 @@ for triangles we have to modify `AreaCalculator` adding a new `else if` block in
 order to handle the calculation of the new area.
 
 To fix this we can move the code that calculates the area to the corresponding
-shapes, and make that shapes implement an interface thats describes better what
+shapes, and make that shapes implement an interface that describes better what
 a shape can do.
 
 ```typescript
@@ -262,7 +265,7 @@ console.log('Areas - ', new Ouputter(areas).text());
 console.log('Volumes - ', new Ouputter(volumes).text());
 ```
 
-The program is not gonna fail but the output will not be consistent, since one
+The program is not gonna fail but the output will not be consistent since one
 output will be something like `Areas - Sum of provided shapes: 42`, and the
 other `Volumes - Sum of provided shapes: 13, 15, 14`. This is not what we expect
 from our program.
@@ -290,13 +293,13 @@ class VolumeCalculator extends AreaCalculator {
 
 > Make fine grained interfaces that are client specific.
 
-In this case we want to keep interfaces as small as possible, so clients are not
+In this case, we want to keep interfaces as small as possible, so clients are not
 forced to implement methods that they don't actually need.
 
 <!-- REVIEW: This explanation could be more detailed -->
 
-So, comming back to our shape interface, now that we can calculate volumes our
-interface looks similart to this:
+So, coming back to our shape interface, now that we can calculate volumes our
+interface looks similar to this:
 
 ```typescript
 interface Shape {
@@ -306,10 +309,10 @@ interface Shape {
 ```
 
 But we know that not all our shapes have a volume, `Square` is a 2D shape but
-because of the interface we are force to implement a `volume` method.
+because of the interface, we are forced to implement a `volume` method.
 
-Applying the _Interface Segregation Principle_ we split the `Shape` interface in
-two different interfaces, one to define 2D shapes and another for 3D shapes.
+Applying the _Interface Segregation Principle_ we split the `Shape` interface
+into two different interfaces, one to define 2D shapes and another for 3D shapes.
 
 ```typescript
 interface Shape2D {
@@ -355,7 +358,7 @@ class ShapeManager {
 }
 ```
 
-In this case `ShapeManager` is a high-level module while `MySQL` is a low-level
+In this case, `ShapeManager` is a high-level module while `MySQL` is a low-level
 module, but this is a violation of the `Dependency Inversion Principle` since we
 are forced to depend on `MySQL`.
 
@@ -386,16 +389,12 @@ class ShapeManager {
 }
 ```
 
-And now our high-level and low-level modules are depending on abstractions
+And now our high-level and low-level modules are depending on abstractions.
 
 ## Conclusion
 
-_TODO_
-
-<!-- TODO: Add some conclusion -->
-
-## References
-
-- [S.O.L.I.D: The First 5 Principles of Object Oriented Design](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
-- [SOLID - Wikipedia](https://en.wikipedia.org/wiki/SOLID)
-- [The Principles of OOD](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
+When starting to write Object-Oriented programing the **SOLID** principles could
+be difficult to understand and, if they are understood, see where and when to
+apply them is not trivial. But they are an example of one of the most important
+things in software development, practice and experience will make you apply
+these principles in a very natural and intuitive way.
