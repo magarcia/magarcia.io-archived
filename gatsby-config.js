@@ -161,6 +161,7 @@ module.exports = {
               {
                 allMdx(
                   limit: 1000,
+                  filter: {frontmatter: {draft: {ne: true}}},
                   sort: { order: DESC, fields: [frontmatter___date] }
                 ) {
                   edges {
