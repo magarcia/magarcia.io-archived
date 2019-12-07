@@ -226,7 +226,8 @@ class VolumeCalculator extends AreaCalculator {
   }
 
   public sum(): number[] {
-    // logic to calculate the volumes and then return and array of output
+    // logic to calculate the volumes and then return
+    // and array of output
   }
 }
 ```
@@ -283,7 +284,8 @@ class VolumeCalculator extends AreaCalculator {
   // constructor
 
   public function sum(): number {
-      // logic to calculate the volumes and then return and array of output
+      // logic to calculate the volumes and then return
+      // and array of output
       return sum;
   }
 }
