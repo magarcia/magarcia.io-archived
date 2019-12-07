@@ -1,7 +1,9 @@
 ---
 title: BLoC Pattern with React Hooks
 date: '2019-02-18'
-spoiler: This is about how to extract the business logic from the components in a React application using the BLoC pattern from Flutter with the new hooks API and RxJS.
+spoiler: About how to extract the business logic from the components of a React
+  application using the BLoC pattern from Flutter, the new hooks API, and RxJS
+  observables.
 tags:
   - React
   - BLoC
@@ -10,7 +12,7 @@ tags:
 
 The **BLoC Pattern** has been designed by _Paolo Soares_ and _Cong Hui_, from
 Google and first presented during the _DartConf 2018_ (January 23-24, 2018).
-[See the video on YouTube](https://www.youtube.com/watch?v=PLHln7wHgPE 'BLoC Pattern Flutter') .
+[See the video on YouTube](https://www.youtube.com/watch?v=PLHln7wHgPE 'BLoC Pattern Flutter').
 
 BLoC stands for **B**usiness **Lo**gic **C**omponent. Initially was conceived to
 allow to reuse the same code between Flutter and Angular Dart, but in fact is

@@ -2,7 +2,9 @@
 layout: post
 title: Refactor TodoMVC with Redux Starter Kit
 date: '2019-01-26'
-spoiler: Redux Starter Kit a toolset to make clean and readable code when working with Redux.
+spoiler: Redux Starter Kit is a toolset to make clean and readable code when
+  working with React and Redux. See an example of how you can refactor an
+  existing application getting all the profit from Redux Starter Kit.
 draft: false
 tags:
   - React
@@ -325,9 +327,8 @@ todos.selectors.getVisibleTodos = createSelector(
   }
 );
 
-todos.selectors.getCompletedTodoCount = createSelector(
-  [todos.selectors.getTodos],
-  todos => todos.reduce((count, todo) => (todo.completed ? count + 1 : count), 0)
+todos.selectors.getCompletedTodoCount = createSelector([todos.selectors.getTodos], todos =>
+  todos.reduce((count, todo) => (todo.completed ? count + 1 : count), 0)
 );
 ```
 
