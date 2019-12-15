@@ -59,7 +59,13 @@ export default class SocialShare extends Component {
     return (
       <aside className={`aside ${visible ? 'visible' : ''} ${ssr ? 'ssrAnimation' : ''}`}>
         {NETWORKS.map(({ name, urlBuilder, logo }) => (
-          <a key={name} target="_blank" rel="noopener noreferrer" href={urlBuilder(title, url)}>
+          <a
+            key={name}
+            title={`Share on ${name}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={urlBuilder(title, url)}
+          >
             {logo}
           </a>
         ))}

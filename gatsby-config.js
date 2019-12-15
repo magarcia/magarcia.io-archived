@@ -25,6 +25,7 @@ module.exports = {
       }
     },
     `gatsby-transformer-json`,
+    'gatsby-plugin-react-axe',
     {
       resolve: 'gatsby-plugin-draft',
       options: {
