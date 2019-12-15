@@ -210,7 +210,7 @@ a[href]:not(.anchor):not(.gatsby-resp-image-link) {
     var(--text) 3px,
     rgba(0, 0, 0, 0) 3px
   );
-  transition: color 0.5s;
+  transition: all 0.5s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 a[href]:not(.anchor):not(.gatsby-resp-image-link):focus,
@@ -221,6 +221,10 @@ a[href]:not(.anchor):not(.gatsby-resp-image-link):hover {
   transform-origin: 0% 50%;
   transition: all 0.5s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+blockquote a[href]:not(.anchor):not(.gatsby-resp-image-link) {
+  text-shadow: -1px -1px 0 var(--bg-blockquote), 1px -1px 0 var(--bg-blockquote),
+    -1px 1px 0 var(--bg-blockquote), 1px 1px 0 var(--bg-blockquote);
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   a.custom {
@@ -333,6 +337,7 @@ blockquote {
   padding: 0.2rem 2rem;
   font-style: italic;
   background: var(--bg-blockquote);
+  transition: background-color 0.8s ease;
 }
 
 ul {
