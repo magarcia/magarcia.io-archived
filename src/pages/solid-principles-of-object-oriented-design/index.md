@@ -94,7 +94,7 @@ console.log(areas.output());
 ```
 
 But this implementation has a problem. In this example, `AreaCalculator`
-handles the logic to calculate the sum of the areas **AND** to output the data.
+handles the logic to calculate the sum of the areas **and** to output the data.
 What if the user wants the output in JSON?
 
 Here is when _Single Responsibility Principle_ comes into play. `AreaCalculator`
