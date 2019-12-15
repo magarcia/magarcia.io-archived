@@ -41,9 +41,8 @@ if these calculations need to change.
 
 In order to understand better the principle, we can do an example. Let's say
 that we have to implement an application that given some shapes it calculates the
-sum of the area of these shapes and prints the output.
-
-We start creating our shapes classes:
+sum of the area of these shapes and prints the output. So, let's start creating
+our shapes classes:
 
 ```typescript
 class Circle {
@@ -256,7 +255,7 @@ class Outputer {
 }
 ```
 
-If we try to run a code like this:
+With this implementation, if we try to run a code like this:
 
 ```typescript
 const areas = new AreaCalculator(shapes2D);

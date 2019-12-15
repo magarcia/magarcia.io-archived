@@ -59,16 +59,11 @@ export default ({ data, location, pageContext }) => {
             </div>
           </div>
           <p>
-            <a
-              href={discussUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Discuss on Twitter"
-            >
+            <a href={discussUrl} target="_blank" rel="noopener noreferrer">
               Discuss on Twitter
             </a>{' '}
             &#8208;{' '}
-            <a href={editUrl} target="_blank" rel="noopener noreferrer" title="Edit on GitHub">
+            <a href={editUrl} target="_blank" rel="noopener noreferrer">
               Edit on GitHub
             </a>
           </p>

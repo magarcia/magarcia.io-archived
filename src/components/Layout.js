@@ -12,9 +12,7 @@ class Layout extends React.Component {
       return (
         <>
           <h1>
-            <Link to="/" title={title}>
-              {title}
-            </Link>
+            <Link to="/">{title}</Link>
           </h1>
           <DarkLightMode />
         </>
@@ -23,9 +21,7 @@ class Layout extends React.Component {
     return (
       <>
         <h3>
-          <Link to="/" title={title}>
-            {title}
-          </Link>
+          <Link to="/">{title}</Link>
         </h3>
         <DarkLightMode />
       </>

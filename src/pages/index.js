@@ -21,9 +21,7 @@ const BlogIndex = props => {
             <article key={node.fields.slug}>
               <header>
                 <h2>
-                  <Link to={buildPath(node.frontmatter.dateRaw, node.fields.slug)} title={title}>
-                    {title}
-                  </Link>
+                  <Link to={buildPath(node.frontmatter.dateRaw, node.fields.slug)}>{title}</Link>
                 </h2>
                 <small className="info">
                   <time dateTime={node.frontmatter.dateRaw}>
