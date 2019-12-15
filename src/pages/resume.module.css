@@ -55,3 +55,30 @@
 .stack {
   color: var(--info);
 }
+
+.stack h5 {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--info);
+  font-size: 1em;
+}
+
+.stack ul {
+  margin: 0;
+  display: inline;
+  padding: 0.3em;
+}
+
+.stack li {
+  list-style: none;
+  display: inline;
+}
+.stack li:after {
+  content: ',';
+  display: inline-block;
+  margin-right: 0.2em;
+}
+.stack li:last-of-type:after {
+  content: '.';
+  display: inline-block;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import styles from './about.module.css';
+import styles from './resume.module.css';
 
 const jobs = [
   {
@@ -90,7 +90,7 @@ const jobs = [
 
 const About = ({ location }) => {
   return (
-    <Layout location={location} title="About">
+    <Layout location={location} title="Resume">
       <SEO />
       <main>
         <h1>
@@ -115,11 +115,17 @@ const About = ({ location }) => {
                 <div key={position.title} className={styles.position}>
                   <h4>{position.title}</h4>
                   {position.time && <div className={styles.time}>{position.time}</div>}
-                  <p>{position.description}</p>
+                  {position.description && <p>{position.description}</p>}
                 </div>
               ))}
               <p className={styles.stack}>
-                <b>Stack</b>: {job.stacks.join(', ')}.
+                <h5>Stack:</h5>
+                {/* {job.stacks.join(', ')}. */}
+                <ul>
+                  {job.stacks.map(stack => (
+                    <li>{stack}</li>
+                  ))}
+                </ul>
               </p>
             </div>
           </div>
