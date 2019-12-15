@@ -5,11 +5,9 @@ exports[`renders correctly 1`] = `
   className="aside  "
 >
   <a
-    aria-label="Share on Twitter"
     href="https://twitter.com/intent/tweet?text=title&url=http://example.com&via=martinprins"
     rel="noopener noreferrer"
     target="_blank"
-    title="Share on Twitter"
   >
     <svg
       className="feather feather-twitter"
@@ -35,11 +33,9 @@ exports[`renders correctly 1`] = `
     </svg>
   </a>
   <a
-    aria-label="Share on Facebook"
     href="https://www.facebook.com/sharer/sharer.php?u=http://example.com"
     rel="noopener noreferrer"
     target="_blank"
-    title="Share on Facebook"
   >
     <svg
       className="feather feather-facebook"
@@ -65,11 +61,9 @@ exports[`renders correctly 1`] = `
     </svg>
   </a>
   <a
-    aria-label="Share on LinkedIn"
     href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com&title=title&source=https%3A//www.linkedin.com/in/martingarciamonterde/"
     rel="noopener noreferrer"
     target="_blank"
-    title="Share on LinkedIn"
   >
     <svg
       className="feather feather-linkedin"
