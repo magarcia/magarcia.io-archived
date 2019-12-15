@@ -1,13 +1,23 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Footer from '../components/Footer';
 import styles from './about.module.css';
 
 const jobs = [
   {
+    company: 'New Relic',
+    time: 'September 2019 - Present',
+    positions: [
+      {
+        title: 'Software Engineer'
+        // description: 'Fullstack development of a platform built using a microservices architecture.'
+      }
+    ],
+    stacks: ['JavaScript', 'React (ES6)', 'CSS']
+  },
+  {
     company: 'ThoughtWorks',
-    time: 'Marth 2017 - Present',
+    time: 'Marth 2017 - September 2019',
     positions: [
       {
         title: 'Software Consultant',
@@ -115,7 +125,6 @@ const About = ({ location }) => {
           </div>
         ))}
       </main>
-      <Footer />
     </Layout>
   );
 };
