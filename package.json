@@ -32,7 +32,7 @@
     "gatsby-remark-smartypants": "^2.1.16",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-json": "^2.2.20",
-    "gatsby-transformer-remark": "^2.6.39",
+    "gatsby-transformer-remark": "^2.6.42",
     "gatsby-transformer-sharp": "^2.3.7",
     "gray-percentage": "^2.0.0",
     "lint-staged": "^9.5.0",
