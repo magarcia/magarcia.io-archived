@@ -33,7 +33,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-json": "^2.2.25",
     "gatsby-transformer-remark": "^2.6.48",
-    "gatsby-transformer-sharp": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.3.13",
     "gray-percentage": "^2.0.0",
     "lint-staged": "^10.0.0",
     "lodash": "^4.17.15",
