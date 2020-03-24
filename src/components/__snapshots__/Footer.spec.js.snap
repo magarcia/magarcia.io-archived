@@ -6,8 +6,8 @@ exports[`renders correctly 1`] = `
 >
   <div>
     <a
-      href="https://mobile.twitter.com/martinprins"
-      rel="noopener noreferrer"
+      href="https://twitter.com/martinprins"
+      rel="me"
       target="_blank"
     >
       twitter
@@ -17,7 +17,7 @@ exports[`renders correctly 1`] = `
      
     <a
       href="https://github.com/magarcia"
-      rel="noopener noreferrer"
+      rel="me"
       target="_blank"
     >
       github
@@ -27,7 +27,7 @@ exports[`renders correctly 1`] = `
      
     <a
       href="https://stackoverflow.com/users/458193/martin-prins"
-      rel="noopener noreferrer"
+      rel="me"
       target="_blank"
     >
       stack overflow
@@ -37,7 +37,7 @@ exports[`renders correctly 1`] = `
      
     <a
       href="https://www.linkedin.com/in/martingarciamonterde/"
-      rel="noopener noreferrer"
+      rel="me"
       target="_blank"
     >
       linkedin
