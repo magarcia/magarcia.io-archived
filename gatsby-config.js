@@ -201,6 +201,23 @@ module.exports = {
         icon: `src/assets/icon.png`
       }
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-webmention`,
+      options: {
+        username: 'magarcia.io', // webmention.io username
+        identity: {
+          // you need to specify at least one of the identities
+          // to be able to log in webmention.io
+          github: 'magarcia',
+          twitter: 'martinprins' // no @
+        },
+        mentions: true,
+        pingbacks: false,
+        domain: 'magarcia.io',
+        fetchLimit: 10000, // number of webmentions to fetch
+        token: process.env.WEBMENTIONS_TOKEN
+      }
+    }
   ]
 };
