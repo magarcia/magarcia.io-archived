@@ -3,6 +3,8 @@ node_js:
   - '12'
 git:
   submodules: true
+env:
+  - SHARP_IGNORE_GLOBAL_LIBVIPS=true
 cache:
   directories:
     - node_modules
