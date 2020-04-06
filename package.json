@@ -67,6 +67,9 @@
     "prettier": "^2.0.3",
     "react-test-renderer": "^16.13.0"
   },
+  "resolutions": {
+    "sharp": "0.24.0"
+  },
   "homepage": "https://magarcia.io",
   "license": "MIT",
   "scripts": {
