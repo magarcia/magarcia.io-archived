@@ -62,7 +62,7 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^25.1.0",
+    "jest": "^25.2.7",
     "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.0"
