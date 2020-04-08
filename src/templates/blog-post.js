@@ -44,16 +44,9 @@ export default ({ data, location, pageContext }) => {
         <footer>
           <div style={{ display: 'inline-block' }}>
             <div className="tags">
-              {post.frontmatter.tags.map(tag => (
+              {post.frontmatter.tags.map((tag) => (
                 <div key={tag} className="tag">
-                  <Link
-                    to={`/tags/${tag
-                      .toLowerCase()
-                      .split(' ')
-                      .join('-')}`}
-                  >
-                    {tag}
-                  </Link>
+                  <Link to={`/tags/${tag.toLowerCase().split(' ').join('-')}`}>{tag}</Link>
                 </div>
               ))}
             </div>
@@ -72,7 +65,7 @@ export default ({ data, location, pageContext }) => {
           <ul>
             {[
               [previous, 'prev'],
-              [next, 'next']
+              [next, 'next'],
             ].map(([p, rel]) => (
               <li key={rel}>
                 {p && (

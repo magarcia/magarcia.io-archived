@@ -10,36 +10,36 @@ const NETWORKS = [
     name: 'Twitter',
     urlBuilder: (title, url) =>
       `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=martinprins`,
-    logo: <Twitter width={24} height={24} title="Share on Twitter" />
+    logo: <Twitter width={24} height={24} title="Share on Twitter" />,
   },
   {
     name: 'Facebook',
     urlBuilder: (_, url) => `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-    logo: <Facebook width={24} height={24} title="Share on Facebook" />
+    logo: <Facebook width={24} height={24} title="Share on Facebook" />,
   },
   {
     name: 'LinkedIn',
     urlBuilder: (title, url) =>
       `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&source=https%3A//www.linkedin.com/in/martingarciamonterde/`,
-    logo: <LinkedIn width={24} height={24} title="Share on LinkedIn" />
-  }
+    logo: <LinkedIn width={24} height={24} title="Share on LinkedIn" />,
+  },
 ];
 export default class SocialShare extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
   };
 
   state = {
     visible: false,
-    ssr: true
+    ssr: true,
   };
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
     this.setState({
       visible: window.pageYOffset > 90,
-      ssr: false
+      ssr: false,
     });
   }
 
@@ -49,7 +49,7 @@ export default class SocialShare extends Component {
 
   handleScroll() {
     this.setState({
-      visible: window.pageYOffset > 90
+      visible: window.pageYOffset > 90,
     });
   }
 

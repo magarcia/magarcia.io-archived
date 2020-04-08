@@ -18,10 +18,7 @@ const Tags = ({ pageContext, data, location }) => {
       <SEO
         title={tagHeader}
         description={`Posts tagged with "GSoC" on magarcia.io`}
-        slug={`/tags/${tag
-          .toLowerCase()
-          .split(' ')
-          .join('-')}`}
+        slug={`/tags/${tag.toLowerCase().split(' ').join('-')}`}
       />
       <main className="post-list">
         <h2>{tagHeader}</h2>

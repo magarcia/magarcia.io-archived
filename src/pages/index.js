@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import { buildPath, formatPostDate, formatReadingTime } from '../utils/helpers';
 
-const BlogIndex = props => {
+const BlogIndex = (props) => {
   const { data, location } = props;
   const siteTitle = get(data, 'site.siteMetadata.title');
   const posts = get(data, 'allMdx.edges');
@@ -32,7 +32,7 @@ const BlogIndex = props => {
               </header>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.spoiler || node.excerpt
+                  __html: node.frontmatter.spoiler || node.excerpt,
                 }}
               />
             </article>

@@ -9,11 +9,11 @@ const jobs = [
     time: 'September 2019 - Present',
     positions: [
       {
-        title: 'Software Engineer'
+        title: 'Software Engineer',
         // description: 'Fullstack development of a platform built using a microservices architecture.'
-      }
+      },
     ],
-    stacks: ['JavaScript', 'React (ES6)', 'CSS']
+    stacks: ['JavaScript', 'React (ES6)', 'CSS'],
   },
   {
     company: 'ThoughtWorks',
@@ -21,10 +21,11 @@ const jobs = [
     positions: [
       {
         title: 'Software Consultant',
-        description: 'Fullstack development of a platform built using a microservices architecture.'
-      }
+        description:
+          'Fullstack development of a platform built using a microservices architecture.',
+      },
     ],
-    stacks: ['Spring (Java)', 'React (ES6)', 'Python', 'AWS', 'Docker', 'Jenkins', 'TeamCity']
+    stacks: ['Spring (Java)', 'React (ES6)', 'Python', 'AWS', 'Docker', 'Jenkins', 'TeamCity'],
   },
   {
     company: 'OpenSuse',
@@ -34,8 +35,8 @@ const jobs = [
       {
         title: 'Frontend Developer',
         description:
-          'Migration of Jangouts, videoconferencing web app, from AngularJS (ECMAScript 5) to Angular 2 (TypeScript) and add a test suit.'
-      }
+          'Migration of Jangouts, videoconferencing web app, from AngularJS (ECMAScript 5) to Angular 2 (TypeScript) and add a test suit.',
+      },
     ],
     stacks: [
       'Angular2',
@@ -45,8 +46,8 @@ const jobs = [
       'Webkpack',
       'Jasmine',
       'Karma',
-      'Bootstrap'
-    ]
+      'Bootstrap',
+    ],
   },
   {
     company: 'Medtep Inc.',
@@ -55,14 +56,14 @@ const jobs = [
       {
         title: 'Senior Frontend Developer',
         time: '2013 - February 2017',
-        description: 'Lead the migration of the platform to a SPA architecture.'
+        description: 'Lead the migration of the platform to a SPA architecture.',
       },
       {
         title: 'Fullstack Developer',
         time: 'March 2011 - 2013',
         description:
-          'Development of the platform across the whole stack, design and implementation of the RESTful API, and integration with third party API.'
-      }
+          'Development of the platform across the whole stack, design and implementation of the RESTful API, and integration with third party API.',
+      },
     ],
     stacks: [
       'Django (Python)',
@@ -70,8 +71,8 @@ const jobs = [
       'MySQL',
       'PostgreSQL',
       'Docker',
-      'Google Cloud Platform'
-    ]
+      'Google Cloud Platform',
+    ],
   },
   {
     company: 'Universitat Politècnica de Catalunya',
@@ -81,11 +82,11 @@ const jobs = [
       {
         title: 'Scholarship Holder on Systems Administration',
         description:
-          "Part-time system administration and helpdesk at the Computer Architecture Department (Departament d'Arquitectura de Computadors, DAC)."
-      }
+          "Part-time system administration and helpdesk at the Computer Architecture Department (Departament d'Arquitectura de Computadors, DAC).",
+      },
     ],
-    stacks: ['GNU/Linux', 'PostgreSQL', 'Bacula']
-  }
+    stacks: ['GNU/Linux', 'PostgreSQL', 'Bacula'],
+  },
 ];
 
 const About = ({ location }) => {
@@ -102,7 +103,7 @@ const About = ({ location }) => {
           looking for new challenges and improve my skills.
         </p>
         <h2 className={styles.sectionTitle}>Work Experience</h2>
-        {jobs.map(job => (
+        {jobs.map((job) => (
           <div key={job.company} className={styles.jobEntry}>
             <div className={styles.company}>
               <h3>{job.company}</h3>
@@ -111,7 +112,7 @@ const About = ({ location }) => {
             </div>
 
             <div className={styles.positions}>
-              {job.positions.map(position => (
+              {job.positions.map((position) => (
                 <div key={position.title} className={styles.position}>
                   <h4>{position.title}</h4>
                   {position.time && <div className={styles.time}>{position.time}</div>}
@@ -122,7 +123,7 @@ const About = ({ location }) => {
                 <h5>Stack:</h5>
                 {/* {job.stacks.join(', ')}. */}
                 <ul>
-                  {job.stacks.map(stack => (
+                  {job.stacks.map((stack) => (
                     <li>{stack}</li>
                   ))}
                 </ul>

@@ -5,9 +5,9 @@ import Layout from './Layout';
 it('renders correctly root path', () => {
   const props = {
     location: {
-      pathname: `${__PATH_PREFIX__}/` // eslint-disable-line no-undef
+      pathname: `${__PATH_PREFIX__}/`, // eslint-disable-line no-undef
     },
-    title: 'title'
+    title: 'title',
   };
   const tree = renderer
     .create(
@@ -22,9 +22,9 @@ it('renders correctly root path', () => {
 it('renders correctly non root path', () => {
   const props = {
     location: {
-      pathname: `${__PATH_PREFIX__}/post` // eslint-disable-line no-undef
+      pathname: `${__PATH_PREFIX__}/post`, // eslint-disable-line no-undef
     },
-    title: 'title'
+    title: 'title',
   };
   const tree = renderer
     .create(

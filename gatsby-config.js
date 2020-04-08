@@ -5,8 +5,8 @@ module.exports = {
     description: 'A personal blog by Martin Garcia. Thoughts, words, and experiments about code.',
     siteUrl: 'https://magarcia.io',
     social: {
-      twitter: '@martinprins'
-    }
+      twitter: '@martinprins',
+    },
   },
   pathPrefix: '/',
   plugins: [
@@ -14,23 +14,23 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+        name: 'pages',
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data/`
-      }
+        path: `${__dirname}/src/data/`,
+      },
     },
     `gatsby-transformer-json`,
     'gatsby-plugin-react-axe',
     {
       resolve: 'gatsby-plugin-draft',
       options: {
-        publishDraft: process.env.NODE_ENV !== 'production'
-      }
+        publishDraft: process.env.NODE_ENV !== 'production',
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
@@ -46,14 +46,14 @@ module.exports = {
               tracedSVG: true,
               //   showCaptions: true,
               markdownCaptions: true,
-              quality: 80
-            }
+              quality: 80,
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           {
             resolve: 'gatsby-remark-autolink-headers',
@@ -71,8 +71,8 @@ module.exports = {
                 <path d="M10 3L8 21" />
                 <path d="M16 3l-2 18" />
               </g>
-            </svg>`
-            }
+            </svg>`,
+            },
           },
           {
             resolve: 'gatsby-remark-prismjs',
@@ -84,21 +84,21 @@ module.exports = {
                   language: 'yumml',
                   extend: 'yaml',
                   definition: {
-                    superscript_types: /(SuperType)/
+                    superscript_types: /(SuperType)/,
                   },
                   insertBefore: {
                     function: {
-                      superscript_keywords: /(superif|superelse)/
-                    }
-                  }
-                }
-              ]
-            }
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+              ],
+            },
           },
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
-        ]
-      }
+          'gatsby-remark-smartypants',
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -107,8 +107,8 @@ module.exports = {
       options: {
         trackingId: `UA-27935483-1`,
         anonymize: true,
-        respectDNT: true // respect "Do Not Track"
-      }
+        respectDNT: true, // respect "Do Not Track"
+      },
     },
     `gatsby-plugin-sitemap`,
     {
@@ -129,7 +129,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) =>
-              allMdx.edges.map(edge => {
+              allMdx.edges.map((edge) => {
                 const { siteUrl } = site.siteMetadata;
                 const url = `${siteUrl}/${edge.node.frontmatter.date.replace(/-/g, '/')}${
                   edge.node.fields.slug
@@ -155,7 +155,7 @@ module.exports = {
                   url,
                   guid: url,
                   categories: edge.node.frontmatter.tags,
-                  custom_elements: [{ 'content:encoded': html + postText }]
+                  custom_elements: [{ 'content:encoded': html + postText }],
                 };
               }),
             query: `
@@ -184,10 +184,10 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'magarcia.io'
-          }
-        ]
-      }
+            title: 'magarcia.io',
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -198,8 +198,8 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#faf014`,
         display: `minimal-ui`,
-        icon: `src/assets/icon.png`
-      }
+        icon: `src/assets/icon.png`,
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -210,14 +210,14 @@ module.exports = {
           // you need to specify at least one of the identities
           // to be able to log in webmention.io
           github: 'magarcia',
-          twitter: 'martinprins' // no @
+          twitter: 'martinprins', // no @
         },
         mentions: true,
         pingbacks: false,
         domain: 'magarcia.io',
         fetchLimit: 10000, // number of webmentions to fetch
-        token: process.env.WEBMENTIONS_TOKEN
-      }
-    }
-  ]
+        token: process.env.WEBMENTIONS_TOKEN,
+      },
+    },
+  ],
 };

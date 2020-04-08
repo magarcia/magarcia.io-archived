@@ -5,7 +5,7 @@ import Moon from './icons/moon';
 class DarkLightMode extends React.Component {
   state = {
     theme: null,
-    hasFocus: false
+    hasFocus: false,
   };
 
   componentDidMount() {
@@ -44,13 +44,13 @@ class DarkLightMode extends React.Component {
       >
         {theme === 'light' ? <Moon height={24} width={24} /> : <Sun height={24} width={24} />}
         <input
-          ref={ref => {
+          ref={(ref) => {
             this.input = ref;
           }}
           type="checkbox"
           checked={theme === 'dark'}
           aria-label="Switch between Dark and Light mode"
-          onChange={e => window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')}
+          onChange={(e) => window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')}
           onFocus={this.handleFocus.bind(this)}
           onBlur={this.handleBlur.bind(this)}
         />

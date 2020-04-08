@@ -14,7 +14,7 @@ const groupBy = (xs, key) =>
 const ImpossibleList = ({ location, data }) => {
   const siteTitle = get(data, 'site.siteMetadata.title');
   const impossiblesGrouped = groupBy(
-    get(data, 'allImpossiblesJson.edges').map(e => e.node),
+    get(data, 'allImpossiblesJson.edges').map((e) => e.node),
     'type'
   );
 

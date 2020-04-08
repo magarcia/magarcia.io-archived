@@ -5,9 +5,9 @@ import ErrorPage from './404';
 it('renders correctly', () => {
   const props = {
     location: {
-      pathname: `/`
+      pathname: `/`,
     },
-    title: 'title'
+    title: 'title',
   };
   const tree = renderer.create(<ErrorPage {...props} />).toJSON();
   expect(tree).toMatchSnapshot();

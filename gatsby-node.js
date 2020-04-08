@@ -33,7 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -55,15 +55,15 @@ exports.createPages = ({ graphql, actions }) => {
               slug: post.node.fields.slug,
               date: _.get(post, 'node.frontmatter.date'),
               previous,
-              next
-            }
+              next,
+            },
           });
         });
 
         // Tag pages:
         let tags = [];
         // Iterate through each post, putting all found tags into `tags`
-        _.each(posts, edge => {
+        _.each(posts, (edge) => {
           if (_.get(edge, 'node.frontmatter.tags')) {
             tags = tags.concat(edge.node.frontmatter.tags);
           }
@@ -72,16 +72,13 @@ exports.createPages = ({ graphql, actions }) => {
         tags = _.uniq(tags);
 
         // Make tag pages
-        tags.forEach(tag => {
+        tags.forEach((tag) => {
           createPage({
-            path: `/tags/${tag
-              .toLowerCase()
-              .split(' ')
-              .join('-')}/`,
+            path: `/tags/${tag.toLowerCase().split(' ').join('-')}/`,
             component: tagTemplate,
             context: {
-              tag
-            }
+              tag,
+            },
           });
         });
       })
@@ -96,12 +93,12 @@ exports.onCreateNode = ({ node, actions }) => {
     createNodeField({
       node,
       name: 'slug',
-      value: `/${path.basename(path.dirname(_.get(node, 'fileAbsolutePath')))}`
+      value: `/${path.basename(path.dirname(_.get(node, 'fileAbsolutePath')))}`,
     });
     createNodeField({
       node,
       name: 'directoryName',
-      value: path.basename(path.dirname(_.get(node, 'fileAbsolutePath')))
+      value: path.basename(path.dirname(_.get(node, 'fileAbsolutePath'))),
     });
   }
 };

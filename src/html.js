@@ -7,7 +7,7 @@ const HTML = ({
   bodyAttributes,
   preBodyComponents,
   postBodyComponents,
-  body
+  body,
 }) => (
   <html {...htmlAttributes}>
     <head>
@@ -45,7 +45,7 @@ const HTML = ({
                 });
                 setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
               })();
-            `
+            `,
         }}
       />
       {preBodyComponents}
@@ -61,7 +61,7 @@ HTML.propTypes = {
   bodyAttributes: PropTypes.object,
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
-  postBodyComponents: PropTypes.array
+  postBodyComponents: PropTypes.array,
 };
 
 export default HTML;

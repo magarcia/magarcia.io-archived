@@ -24,7 +24,7 @@ function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
   return (
     <StaticQuery
       query={query}
-      render={data => {
+      render={(data) => {
         const { siteMetadata } = data.site;
         const metaDescription = description || siteMetadata.description;
         const metaImage = image
@@ -37,8 +37,8 @@ function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
             '@type': 'WebSite',
             url: siteMetadata.siteUrl,
             name: title,
-            alternateName: siteMetadata.title || ''
-          }
+            alternateName: siteMetadata.title || '',
+          },
         ];
         if (title) {
           schemaOrgJSONLD.push(
@@ -52,10 +52,10 @@ function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
                   item: {
                     '@id': url,
                     name: title,
-                    image
-                  }
-                }
-              ]
+                    image,
+                  },
+                },
+              ],
             },
             {
               '@context': 'http://schema.org',
@@ -66,20 +66,20 @@ function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
               headline: title,
               image: {
                 '@type': 'ImageObject',
-                url: metaImage
+                url: metaImage,
               },
               datePublished: date,
               author: {
                 '@type': 'Person',
                 name: data.site.author,
-                email: 'contact@magarcia.io'
+                email: 'contact@magarcia.io',
               },
               publisher: {
                 '@type': 'Person',
                 name: data.site.author,
-                email: 'contact@magarcia.io'
+                email: 'contact@magarcia.io',
               },
-              description: metaDescription
+              description: metaDescription,
             }
           );
         }
@@ -89,68 +89,68 @@ function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
             {...(title
               ? {
                   titleTemplate: `%s — ${siteMetadata.title}`,
-                  title
+                  title,
                 }
               : {
-                  title: `${siteMetadata.title} — A blog by Martin Garcia`
+                  title: `${siteMetadata.title} — A blog by Martin Garcia`,
                 })}
             meta={[
               {
                 name: 'description',
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 property: 'og:url',
-                content: url
+                content: url,
               },
               {
                 property: 'og:site_name',
-                content: siteMetadata.title
+                content: siteMetadata.title,
               },
               {
                 property: 'og:title',
-                content: title || siteMetadata.title
+                content: title || siteMetadata.title,
               },
               {
                 property: 'og:type',
-                content: title ? 'article' : 'blog'
+                content: title ? 'article' : 'blog',
               },
               {
                 property: 'og:description',
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 property: 'og:image',
-                content: metaImage
+                content: metaImage,
               },
               {
                 property: 'og:locale',
-                content: 'en_GB'
+                content: 'en_GB',
               },
               {
                 name: 'twitter:card',
-                content: 'summary'
+                content: 'summary',
               },
               {
                 name: 'twitter:creator',
-                content: siteMetadata.social.twitter
+                content: siteMetadata.social.twitter,
               },
               {
                 name: 'twitter:site',
-                content: siteMetadata.social.twitter
+                content: siteMetadata.social.twitter,
               },
               {
                 name: 'twitter:title',
-                content: title || siteMetadata.title
+                content: title || siteMetadata.title,
               },
               {
                 name: 'twitter:image',
-                content: metaImage
+                content: metaImage,
               },
               {
                 name: 'twitter:description',
-                content: metaDescription
-              }
+                content: metaDescription,
+              },
             ].concat(meta)}
           >
             <link rel="canonical" href={url} />
@@ -167,7 +167,7 @@ function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
 SEO.defaultProps = {
   meta: [],
   title: '',
-  slug: ''
+  slug: '',
 };
 
 SEO.propTypes = {
@@ -176,7 +176,7 @@ SEO.propTypes = {
   meta: PropTypes.array,
   slug: PropTypes.string,
   title: PropTypes.string,
-  date: PropTypes.any
+  date: PropTypes.any,
 };
 
 export default SEO;
