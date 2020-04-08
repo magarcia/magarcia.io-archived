@@ -571,8 +571,3 @@ and also iPads specifically.
 .gatsby-resp-image-wrapper img {
   width: 100%;
 }
-
-/* HACK: Fix progressive image loading background */
-.gatsby-resp-image-background-image {
-  position: absolute !important;
-}
