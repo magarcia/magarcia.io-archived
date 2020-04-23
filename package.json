@@ -41,7 +41,7 @@
     "lodash": "^4.17.15",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
-    "react": "^16.13.0",
+    "react": "^16.13.1",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "sharp": "^0.25.2"
