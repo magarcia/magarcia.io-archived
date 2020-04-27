@@ -25,7 +25,7 @@ export default ({ data, location, pageContext }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.spoiler}
-        image={post.frontmatter.featuredImage.childImageSharp.fixed.src}
+        image={get(post.frontmatter, 'featuredImage.childImageSharp.fixed.src')}
         slug={buildPath(date, slug)}
         date={date}
       />
