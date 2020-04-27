@@ -25,6 +25,7 @@ export default ({ data, location, pageContext }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.spoiler}
+        image={post.frontmatter.featuredImage.childImageSharp.fixed.src}
         slug={buildPath(date, slug)}
         date={date}
       />
@@ -106,6 +107,13 @@ export const pageQuery = graphql`
         dateRaw: date
         spoiler
         tags
+        featuredImage {
+          childImageSharp {
+            fixed(base64Width: 800) {
+              src
+            }
+          }
+        }
       }
       fields {
         slug

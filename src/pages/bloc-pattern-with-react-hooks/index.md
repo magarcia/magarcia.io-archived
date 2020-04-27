@@ -4,6 +4,7 @@ date: '2019-02-18'
 spoiler: About how to extract the business logic from the components of a React
   application using the BLoC pattern from Flutter, the new hooks API, and RxJS
   observables.
+featuredImage: bloc-schema.png
 tags:
   - React
   - BLoC
@@ -54,7 +55,7 @@ export class SearchBloc {
 
   constructor(private api: API) {
     this._results$ = this._query$.pipe(
-      switchMap(query => {
+      switchMap((query) => {
         return observableFrom(this.api.search(query));
       })
     );

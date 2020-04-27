@@ -28,7 +28,7 @@ function SEO({ meta, image, title, description, slug, date, lang = 'en' }) {
         const { siteMetadata } = data.site;
         const metaDescription = description || siteMetadata.description;
         const metaImage = image
-          ? `${siteMetadata.siteUrl}/${image}`
+          ? `${siteMetadata.siteUrl}${image}`
           : `${siteMetadata.siteUrl}${profilePic}`;
         const url = `${siteMetadata.siteUrl}${slug}`;
         const schemaOrgJSONLD = [
