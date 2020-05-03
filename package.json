@@ -73,6 +73,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run dev",
+    "clean": "gatsby clean",
     "dev": "gatsby develop",
     "lh": "lighthouse-ci",
     "dry": "npm build && cd public && npx static-server",
