@@ -33,7 +33,7 @@
     "gatsby-remark-smartypants": "^2.3.1",
     "gatsby-source-filesystem": "^2.3.3",
     "gatsby-transformer-json": "^2.4.1",
-    "gatsby-transformer-remark": "^2.7.0",
+    "gatsby-transformer-remark": "^2.8.8",
     "gatsby-transformer-sharp": "^2.4.7",
     "gatsby-transformer-sqip": "^2.2.7",
     "gray-percentage": "^2.0.0",
