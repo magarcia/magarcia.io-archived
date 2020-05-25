@@ -66,7 +66,7 @@
     "jest": "^25.2.7",
     "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
     "node-gyp": "^6.1.0",
-    "prettier": "^2.0.4",
+    "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.0"
   },
   "homepage": "https://magarcia.io",
