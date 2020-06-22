@@ -37,7 +37,7 @@
     "gatsby-transformer-sharp": "^2.5.5",
     "gatsby-transformer-sqip": "^2.2.7",
     "gray-percentage": "^2.0.0",
-    "lint-staged": "^10.2.7",
+    "lint-staged": "^10.2.11",
     "lodash": "^4.17.15",
     "prismjs": "^1.20.0",
     "prop-types": "^15.7.2",
