@@ -16,7 +16,7 @@
     "gatsby-plugin-feed-mdx": "^1.0.1",
     "gatsby-plugin-google-analytics": "^2.3.10",
     "gatsby-plugin-i18n": "^1.0.1",
-    "gatsby-plugin-manifest": "^2.4.3",
+    "gatsby-plugin-manifest": "^2.4.17",
     "gatsby-plugin-mdx": "^1.2.22",
     "gatsby-plugin-offline": "^3.2.16",
     "gatsby-plugin-react-axe": "^0.4.0",
