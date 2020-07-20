@@ -47,7 +47,7 @@
     "sharp": "^0.25.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.3",
+    "@babel/core": "^7.10.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.1.0",
     "babel-preset-gatsby": "^0.5.2",
