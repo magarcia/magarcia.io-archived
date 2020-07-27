@@ -8,7 +8,7 @@
     "url": "https://github.com/magarcia/magarcia.io/issues"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.11",
+    "@mdx-js/mdx": "^1.6.14",
     "@mdx-js/react": "^1.6.11",
     "gatsby": "^2.24.4",
     "gatsby-plugin-draft": "0.0.5",
