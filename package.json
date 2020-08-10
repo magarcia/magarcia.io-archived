@@ -18,7 +18,7 @@
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.21",
     "gatsby-plugin-mdx": "^1.2.34",
-    "gatsby-plugin-offline": "^3.2.21",
+    "gatsby-plugin-offline": "^3.2.22",
     "gatsby-plugin-react-axe": "^0.4.1",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.24",
