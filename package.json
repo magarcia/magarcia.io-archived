@@ -10,7 +10,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
-    "gatsby": "^2.24.47",
+    "gatsby": "^2.24.53",
     "gatsby-plugin-draft": "0.0.5",
     "gatsby-plugin-feed": "^2.5.11",
     "gatsby-plugin-feed-mdx": "^1.0.1",
