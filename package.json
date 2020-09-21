@@ -35,7 +35,7 @@
     "gatsby-transformer-json": "^2.4.12",
     "gatsby-transformer-remark": "^2.8.34",
     "gatsby-transformer-sharp": "^2.5.14",
-    "gatsby-transformer-sqip": "^2.3.35",
+    "gatsby-transformer-sqip": "^2.3.36",
     "gray-percentage": "^2.0.0",
     "lint-staged": "^10.4.0",
     "lodash": "^4.17.20",
