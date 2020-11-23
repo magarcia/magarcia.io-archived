@@ -42,7 +42,7 @@
     "prismjs": "^1.22.0",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "sharp": "^0.26.2"
   },
