@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  assignees:
+  - magarcia
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.12.13
+    - 7.13.10
+    - 7.13.13
+    - 7.13.8
+  - dependency-name: gatsby-plugin-feed
+    versions:
+    - 2.13.0
+  - dependency-name: gatsby-transformer-sharp
+    versions:
+    - 2.11.0
+    - 2.12.0
+  - dependency-name: gatsby-remark-images
+    versions:
+    - 3.11.0
+  - dependency-name: gatsby-plugin-react-helmet
+    versions:
+    - 3.9.0
+  - dependency-name: gatsby-transformer-json
+    versions:
+    - 2.10.0
